@@ -7,6 +7,11 @@ export const HomePageContainer = styled.div`
   background: #f0f0f0;
 `
 
+export const HomeHeaderLogoComp = styled.img`
+  width: 100px;
+  height: 100%;
+`
+
 export const HomeMain = styled.div`
   width: 100%;
   height: calc(100% - 40px);
@@ -25,6 +30,10 @@ export const HomeHeaderBox = styled.header`
   width: 100%;
   height: 40px;
   border-bottom: 1px solid #e3e4e5;
+  background-color: #d9d9d9;
+  .file-btn {
+    color: #fff;
+  }
 `
 
 export const HomeContent = styled.div`

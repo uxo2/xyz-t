@@ -5,6 +5,11 @@ import Page404 from '../pages/404'
 
 const ContainerRoute: CustomRouter.Route[] = [
   {
+    path: '',
+    name: 'home',
+    component: Home
+  },
+  {
     path: '/home',
     name: 'home',
     component: Home
