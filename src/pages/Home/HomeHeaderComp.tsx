@@ -1,9 +1,9 @@
-import { Button } from 'antd'
+import { Button, Image } from 'antd'
 // import { DownloadOutlined } from '@ant-design/icons'
-import imgLogo from '../../assets/images/logo.png'
+// import imgLogo from '../../assets/images/logo.png'
+import { logofallback } from '../../assets/images/base64.js'
 import {
   HomeHeaderBox,
-  HomeHeaderLogoComp,
 } from './styled'
 import HomeFileResources from './HomeFileResources'
 
@@ -14,7 +14,7 @@ const HomeHeaderBoxComp = () => {
 
   return (
     <HomeHeaderBox>
-      <HomeHeaderLogoComp src={imgLogo} alt="logo"></HomeHeaderLogoComp>
+      <Image className="logo-box" width={100} height={40} src="error" fallback={logofallback}></Image>
       <Button type="text" className="file-btn" size="small">文件(F)</Button>
       <Button type="text" onClick={() => openFileResourcesDrawer()}>TL</Button>
       <HomeFileResources></HomeFileResources>
@@ -23,5 +23,3 @@ const HomeHeaderBoxComp = () => {
 }
 
 export default HomeHeaderBoxComp
-
-
