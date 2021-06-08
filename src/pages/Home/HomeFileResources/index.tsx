@@ -1,6 +1,5 @@
 import { Drawer } from 'antd'
 
-
 const FileResources = () => {
   const onClose = () => { }
   let visible = false

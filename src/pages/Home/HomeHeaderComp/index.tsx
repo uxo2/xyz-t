@@ -8,7 +8,7 @@ import {
   HomeHeaderBox,
   Button
 } from './styled'
-import HomeFileResources from './HomeFileResources'
+import HomeFileResources from '../HomeFileResources/index'
 
 const HomeHeaderBoxComp = () => {
   const openFileResourcesDrawer = () => {
