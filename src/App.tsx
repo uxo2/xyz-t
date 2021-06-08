@@ -6,7 +6,7 @@ import 'antd/dist/antd.css'
 const AppDiv = styled.div`
   width: 100vw;
   height: 100vh;
-  background: #212121;
+  background: #212121eb;
 `
 const App = () => (
   <AppDiv>

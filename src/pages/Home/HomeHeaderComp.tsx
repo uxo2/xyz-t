@@ -1,9 +1,12 @@
-import { Button, Image } from 'antd'
+import {
+  Image
+} from 'antd'
 // import { DownloadOutlined } from '@ant-design/icons'
 // import imgLogo from '../../assets/images/logo.png'
-import { logofallback } from '../../assets/images/base64.js'
+// import { logofallback } from '../../assets/images/base64.js'
 import {
   HomeHeaderBox,
+  Button
 } from './styled'
 import HomeFileResources from './HomeFileResources'
 
@@ -14,9 +17,9 @@ const HomeHeaderBoxComp = () => {
 
   return (
     <HomeHeaderBox>
-      <Image className="logo-box" width={100} height={40} src="error" fallback={logofallback}></Image>
-      <Button type="text" className="file-btn" size="small">文件(F)</Button>
-      <Button type="text" onClick={() => openFileResourcesDrawer()}>TL</Button>
+      <Image className="logo-box" width={40} height={35} preview={false} src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></Image>
+      <Button>File</Button>
+      <Button onClick={() => openFileResourcesDrawer()}>TL</Button>
       <HomeFileResources></HomeFileResources>
     </HomeHeaderBox>
   )

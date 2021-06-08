@@ -1,8 +1,8 @@
 import HomeHeaderComp from './HomeHeaderComp'
+import HomeSidebarLeftBox from './HomeSidebarLeftBox'
 import {
   HomePageContainer,
   HomeMain,
-  HomeSidebarLeftBox,
   HomeContent
 } from './styled'
 

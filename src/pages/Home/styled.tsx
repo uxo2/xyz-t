@@ -4,7 +4,6 @@ export const HomePageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #f0f0f0;
 `
 
 export const HomeMain = styled.div`
@@ -15,7 +14,20 @@ export const HomeMain = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 `
-export const HomeSidebarLeftBox = styled.div`
+
+export const Button = styled.div`
+  display: inline-block;
+  padding: 2px 4px;
+  color: #fff;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #909399;
+  }
+`
+
+export const SideBarComp = styled.div`
   width: 40px;
   height: 100%;
   border-right: 1px solid #e3e4e5;
@@ -23,17 +35,16 @@ export const HomeSidebarLeftBox = styled.div`
 
 export const HomeHeaderBox = styled.header`
   width: 100%;
-  height: 40px;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   border-bottom: 1px solid #e3e4e5;
-  background-color: #d9d9d9;
-  .file-btn {
-    color: #fff;
-  }
   .logo-box {
-    width: 100px;
+    width: 100%;
     height: 100%;
+    padding: 7px;
     display: inline-block;
-    background: #d9d9d9;
   }
 `
 
