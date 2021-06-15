@@ -21,7 +21,20 @@ export const Button = styled.div`
   width: 50px;
   text-align: center;
   cursor: pointer;
-  &:hover {
-    background-color: #909399;
+`
+
+export const PopoverContentBox = styled.ul`
+  width: 220px;
+  margin: 0;
+  li {
+    line-height: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    text-indent: 5px;
+    border-radius: 3px;
+    &:hover {
+      background: #1890ff;
+      color: #fff;
+    }
   }
 `

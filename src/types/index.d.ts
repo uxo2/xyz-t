@@ -9,6 +9,7 @@ declare namespace State {
 declare namespace CustomRouter {
   interface Route {
     path: string
+    redirectd?: string
     name?: string
     params?: string
     exact?: boolean

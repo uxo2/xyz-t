@@ -7,6 +7,4 @@ export const SIDEBAR_LEFT_ICONS = [
   { icon: BugOutlined, title: 'debug', value: 'preivew' }
 ]
 
-export default {
-  SIDEBAR_LEFT_ICONS
-}
+export default SIDEBAR_LEFT_ICONS
