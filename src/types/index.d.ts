@@ -16,3 +16,30 @@ declare namespace CustomRouter {
     component: React.FunctionComponent<any>
   }
 }
+
+declare namespace Meta {
+  interface HeaderDir {
+    label: String
+    value: String
+    disabled: Boolean
+    onClick: Function | null
+    children?: Array<FileDir>
+  }
+
+  interface SidebarIcons {
+    icon: String
+    title: String
+    link: String
+  }
+
+  export interface FileDir {
+    label: String
+    value: String
+    disabled: Boolean
+    icon?: String
+    keymaster?: String
+    divider?: Boolean
+    onClick?: Function | null,
+    children?: []
+  }
+}

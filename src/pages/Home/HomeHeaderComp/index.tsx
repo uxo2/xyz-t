@@ -8,37 +8,53 @@ import {
 import {
   HomeHeaderBox,
   Button,
+  PopoverContentItem,
+  PopoverDivider,
   PopoverContentBox
 } from './styled'
 import HomeFileResources from '../HomeFileResources/index'
-
+import {
+  HEADER_DIR
+} from '../../../utils/constant'
+import React from 'react'
 const HomeHeaderBoxComp = () => {
-  const openFileResourcesDrawer = () => {
-    console.log(12)
-  }
-
-  const CodeContentDOM = (
+  const CodeContentDOM = (file: Array<Meta.FileDir>) => (
     <PopoverContentBox>
-      <li>关于 xyz-t</li>
-      <li>退出登陆</li>
+      {
+        file.map((item, index) => (
+          <React.Fragment key={index}>
+            <PopoverContentItem>{item.label}</PopoverContentItem>
+            {item.divider ? <PopoverDivider></PopoverDivider> : ''}
+          </React.Fragment>
+        ))
+      }
     </PopoverContentBox>
   )
 
   return (
     <HomeHeaderBox>
       <Image className="logo-box" width={40} height={35} preview={false} src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></Image>
-      <Popover content={CodeContentDOM} placement="bottomLeft" trigger="click">
-        <Button>Code</Button>
-      </Popover>
-      <Button>文件</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>编辑</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>选择</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>查看</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>转到</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>运行</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>源码</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>文档</Button>
-      <Button onClick={() => openFileResourcesDrawer()}>帮助</Button>
+      {
+        HEADER_DIR.map((file, index) => {
+          let children: any
+
+          if (file.children && !file.disabled) {
+            children = (
+              <Popover content={(CodeContentDOM(file.children || []))} placement="bottomLeft" trigger="click">
+                <Button disabled={file.disabled}>{file.label}</Button>
+              </Popover>
+            )
+          } else {
+            children = <Button disabled key={index}>{file.label}</Button>
+          }
+
+          return (
+            <React.Fragment key={index}>
+              {children}
+            </React.Fragment>
+          )
+        })
+      }
       <HomeFileResources></HomeFileResources>
     </HomeHeaderBox>
   )

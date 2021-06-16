@@ -1,4 +1,8 @@
 import HomeHeaderComp from './HomeHeaderComp/index'
+import SidebarleftIconList from './SidebarLeftIconsList/index'
+import SideBarLeftToolComp from './SidebarLeftTool/index'
+import SideBarRightConfigBox from './SideBarRightConfigBox/index'
+import WorkbenchComp from './WorkbenchComp/index'
 import {
   HomePageContainer,
   HomeMain
@@ -6,9 +10,12 @@ import {
 
 const HomePage = () => (
   <HomePageContainer>
-    <HomeHeaderComp></HomeHeaderComp>
+    <HomeHeaderComp />
     <HomeMain>
-
+      <SidebarleftIconList />
+      <SideBarLeftToolComp />
+      <WorkbenchComp />
+      <SideBarRightConfigBox />
     </HomeMain>
   </HomePageContainer>
 )

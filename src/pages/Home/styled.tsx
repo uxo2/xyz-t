@@ -8,10 +8,10 @@ export const HomePageContainer = styled.div`
 
 export const HomeMain = styled.div`
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 35px);
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 `
 
