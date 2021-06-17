@@ -1,12 +1,16 @@
 import {
   FileTextOutlined,
   SearchOutlined,
-  BugOutlined,
-  FileProtectOutlined,
-  WindowsOutlined
+  BugOutlined
 } from '@ant-design/icons'
 import antdDesignLogo from '../assets/images/antDesign.svg'
 import elementLogo from '../assets/images/elementLogo.svg'
+import webpackLogo from '../assets/images/webpack.svg'
+import gulpLogo from '../assets/images/gulp.svg'
+import angularMaterialLogo from '../assets/images/angularMaterial.svg'
+
+
+
 
 export const SIDEBAR_LEFT_ICONS = [
   { icon: FileTextOutlined, title: '资源管理器', value: 'resources' },
@@ -16,8 +20,11 @@ export const SIDEBAR_LEFT_ICONS = [
 ]
 
 export const SIDEBAR_ICONS_LIST = [
-  { icon: FileProtectOutlined, title: 'ant Design', link: 'antDesign', selected: false, img: antdDesignLogo, width: 24 },
-  { icon: WindowsOutlined, title: 'element-plus', link: 'elementPlus', selected: false, img: elementLogo, width: 26 }
+  { title: 'ant Design', link: 'antDesign', selected: false, img: antdDesignLogo, width: 24 },
+  { title: 'element-plus', link: 'elementPlus', selected: false, img: elementLogo, width: 26 },
+  { title: 'webpack', link: 'webpack', selected: false, img: webpackLogo, width: 26 },
+  { title: 'gulp', link: 'gulp', selected: false, img: gulpLogo, width: 26 },
+  { title: 'angularMaterial', link: 'angularMaterial', selected: false, img: angularMaterialLogo, width: 26 }
 ]
 
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
