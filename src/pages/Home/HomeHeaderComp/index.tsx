@@ -2,7 +2,9 @@ import {
   Image,
   Popover
 } from 'antd'
-// import { DownloadOutlined } from '@ant-design/icons'
+import {
+  RightOutlined
+} from '@ant-design/icons'
 // import imgLogo from '../../assets/images/logo.png'
 // import { logofallback } from '../../assets/images/base64.js'
 import {
@@ -17,33 +19,62 @@ import {
   HEADER_DIR
 } from '../../../utils/constant'
 import React from 'react'
+
 const HomeHeaderBoxComp = () => {
   const CodeContentDOM = (file: Array<Meta.FileDir>) => (
-    <PopoverContentBox>
+    <PopoverContentBox className="popoverContentRef">
       {
-        file.map((item, index) => (
+        file.map((item, index) =>
           <React.Fragment key={index}>
-            <PopoverContentItem>{item.label}</PopoverContentItem>
+            <PopoverContentItem>
+              {
+                item.children ?
+                  <Popover
+                    content={(CodeContentDOM(item.children || []))}
+                    placement="rightTop"
+                    trigger="click"
+                    color="#f2f4f5"
+                    getPopupContainer={() => document.querySelector('.popoverContentRef') || document.body}
+                  >
+                    <div className="title">{item.label}</div>
+                    <RightOutlined />
+                  </Popover>
+                  :
+                  <div className="title">{item.label}</div>
+              }
+            </PopoverContentItem>
             {item.divider ? <PopoverDivider></PopoverDivider> : ''}
           </React.Fragment>
-        ))
+        )
       }
     </PopoverContentBox>
   )
 
   return (
-    <HomeHeaderBox>
-      <Image className="logo-box" width={40} height={35} preview={false} src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"></Image>
+    <HomeHeaderBox id="headerRef">
+      <Image
+        className="logo-box"
+        width={40}
+        height={35}
+        preview={false}
+        src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+      />
       {
         HEADER_DIR.map((file, index) => {
           let children: any
 
           if (file.children && !file.disabled) {
-            children = (
-              <Popover content={(CodeContentDOM(file.children || []))} placement="bottomLeft" trigger="click">
+            children =
+              <Popover
+                content={(CodeContentDOM(file.children || []))}
+                placement="bottomLeft"
+                color="#f2f4f5"
+                overlayClassName="uxo-popover"
+                getPopupContainer={() => document.getElementById('headerRef') || document.body}
+                trigger="click"
+              >
                 <Button disabled={file.disabled}>{file.label}</Button>
               </Popover>
-            )
           } else {
             children = <Button disabled key={index}>{file.label}</Button>
           }
@@ -55,7 +86,7 @@ const HomeHeaderBoxComp = () => {
           )
         })
       }
-      <HomeFileResources></HomeFileResources>
+      <HomeFileResources />
     </HomeHeaderBox>
   )
 }

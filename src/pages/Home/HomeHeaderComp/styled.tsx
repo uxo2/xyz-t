@@ -42,12 +42,21 @@ export const PopoverContentBox = styled.ul`
 `
 
 export const PopoverContentItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   line-height: 25px;
   font-size: 14px;
   cursor: pointer;
   text-indent: 5px;
   border-radius: 3px;
   user-select: none;
+  > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
   &:hover {
     background: #1890ff;
     color: #fff;

@@ -22,7 +22,10 @@ code {
 .ant-popover-inner-content {
   padding: 8px !important;
   border-radius: 8px;
-  background-color: #f2f4f5 !important;
+}
+
+.uxo-popover {
+  padding-top: 0 !important;
 }
 
 body {
@@ -79,4 +82,37 @@ img, fieldset {
 }
 ins {
 text-decoration:none;
+}
+
+.scroll-small::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.scroll-small::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.scroll-large::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scroll-large::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  position: relative;
+  right: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: #282b33;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
 }

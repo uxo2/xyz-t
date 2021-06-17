@@ -1,10 +1,32 @@
 declare namespace State {
-  export interface Script {
-    args?: String
-    codeHash: String<Number>
+  export interface AppState extends PageState {
+    app: App
+  }
+
+  interface PageState {
+    activeFile: ActiveFile
+    metaView: MetaView
+  }
+
+  interface App {
+    token: String
+    id: String
+    username: String
+    avatar: String
+    lastLoginTime: Number | null
+  }
+
+  interface ActiveFile {
+    templateStr: String
+    id: String
+  }
+
+  interface MetaView {
+    visibleSideBarLeftTool: Boolean
+    visibleSidebarIconsList: Boolean
+    visibleSidebarRightConfigBox: Boolean
   }
 }
-
 
 declare namespace CustomRouter {
   interface Route {
@@ -40,6 +62,6 @@ declare namespace Meta {
     keymaster?: String
     divider?: Boolean
     onClick?: Function | null,
-    children?: []
+    children?: Array<FileDir>
   }
 }

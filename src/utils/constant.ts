@@ -3,9 +3,10 @@ import {
   SearchOutlined,
   BugOutlined,
   FileProtectOutlined,
-  WindowsOutlined,
-  CodeSandboxOutlined
+  WindowsOutlined
 } from '@ant-design/icons'
+import antdDesignLogo from '../assets/images/antDesign.svg'
+import elementLogo from '../assets/images/elementLogo.svg'
 
 export const SIDEBAR_LEFT_ICONS = [
   { icon: FileTextOutlined, title: '资源管理器', value: 'resources' },
@@ -15,18 +16,33 @@ export const SIDEBAR_LEFT_ICONS = [
 ]
 
 export const SIDEBAR_ICONS_LIST = [
-  { icon: FileProtectOutlined, title: '表单页面', link: 'file', selected: false },
-  { icon: WindowsOutlined, title: '基础控件', link: 'component', selected: false },
-  { icon: CodeSandboxOutlined, title: '静态资源', link: 'staticResource', selected: false }
+  { icon: FileProtectOutlined, title: 'ant Design', link: 'antDesign', selected: false, img: antdDesignLogo, width: 24 },
+  { icon: WindowsOutlined, title: 'element-plus', link: 'elementPlus', selected: false, img: elementLogo, width: 26 }
 ]
 
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
   {
     label: '首页', value: 'homePage', disabled: false, onClick: null,
     children: [
-      { label: '初始化流水线', value: 'initializePipeline', disabled: false, onClick: null, divider: true },
+      { label: '新建', value: 'newProject', disabled: false, onClick: null, divider: true },
       { label: '自动保存', value: 'autoSave', disabled: false, onClick: null },
       { label: '退出', value: 'exit', disabled: false, onClick: null }
+    ]
+  },
+  {
+    label: '查看', value: 'view', disabled: false, onClick: null,
+    children: [
+      { label: '命令面板', value: 'commandPanel', disabled: false, onClick: null },
+      { label: '打开视图', value: 'commandPanel', disabled: false, onClick: null, divider: true },
+      {
+        label: '外观', value: 'commandPanel', disabled: false, onClick: null,
+        children: [
+          { label: '顶部菜单栏', value: 'menubar', disabled: false, onClick: null },
+          { label: '侧栏', value: 'sidebar', disabled: false, onClick: null },
+          { label: '底部状态栏', value: 'footerbar', disabled: false, onClick: null },
+          { label: '侧栏右移', value: 'sidebarRight', disabled: false, onClick: null }
+        ]
+      }
     ]
   },
   {

@@ -4,6 +4,9 @@ export const SidebarleftIconList = styled.div`
   width: 45px;
   height: 100%;
   li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     line-height: 45px;
     height: 45px;
@@ -12,6 +15,7 @@ export const SidebarleftIconList = styled.div`
     text-align: center;
     &:hover {
       color: #fff;
+      background-color: #00000091;
     }
   }
 `

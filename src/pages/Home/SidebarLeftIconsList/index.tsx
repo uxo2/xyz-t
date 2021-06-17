@@ -4,6 +4,9 @@ import {
 import {
   SIDEBAR_ICONS_LIST
 } from '../../../utils/constant'
+import {
+  Image
+} from 'antd'
 
 const SidebarLeft = () => (
   <SidebarleftIconList>
@@ -20,7 +23,11 @@ const SidebarLeft = () => (
             //   }
             // })
           }}>
-          {<item.icon />}
+          <Image
+            width={item.width}
+            src={item.img}
+            preview={false}
+          />
         </li>
       ))
     }

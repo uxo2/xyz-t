@@ -13,13 +13,11 @@ export const WorkbenchBox = styled.div`
 export const OpenPageListBox = styled.div`
   width: 100%;
   height: 35px;
-  background-color: #d9d9d9;
 `
 
 export const PaintContainer = styled.div`
   width: 100%;
   flex: 1;
-  background-color: #fff;
 `
 
 export const WorkbenchFooter = styled.div`
