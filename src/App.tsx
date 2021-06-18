@@ -1,16 +1,19 @@
-import styled from 'styled-components'
 import Routers from './routes'
 import 'antd/dist/antd.css'
+import styled, { ThemeProvider } from 'styled-components'
 
 const AppDiv = styled.div`
   width: 100vw;
   height: 100vh;
   background: #0a101b;
 `
+
 const App = () => (
-  <AppDiv>
-    <Routers></Routers>
-  </AppDiv>
+  <ThemeProvider theme={{ mode: 'dark' }}>
+    <AppDiv>
+      <Routers></Routers>
+    </AppDiv>
+  </ThemeProvider>
 )
 
 export default App

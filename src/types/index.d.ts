@@ -43,8 +43,8 @@ declare namespace Meta {
   interface HeaderDir {
     label: String
     value: String
+    notify: Boolean
     disabled: Boolean
-    onClick: Function | null
     children?: Array<FileDir>
   }
 
@@ -61,6 +61,7 @@ declare namespace Meta {
     icon?: String
     keymaster?: String
     divider?: Boolean
+    notify: Boolean
     onClick?: Function | null,
     children?: Array<FileDir>
   }

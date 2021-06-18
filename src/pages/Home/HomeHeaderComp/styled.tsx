@@ -6,7 +6,8 @@ export const HomeHeaderBox = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #282b33;
+  background-color: rgba(16 18 27 / 30%);
+  border-bottom: 1px solid var(--border-color);
   .logo-box {
     width: 100%;
     height: 100%;
@@ -14,7 +15,6 @@ export const HomeHeaderBox = styled.header`
     display: inline-block;
   }
 `
-
 
 interface ButtonPropsAttrs {
   disabled?: Boolean
@@ -24,7 +24,7 @@ export const Button = styled.div`
   display: inline-block;
   width: 50px;
   text-align: center;
-  cursor: pointer;
+  cursor: default;
   height: 100%;
   user-select: none;
   line-height: 34px;
@@ -33,6 +33,19 @@ export const Button = styled.div`
   color: ${(props: ButtonPropsAttrs) => props.disabled ? '#928e8e' : '#fff'};
   &:hover {
     background:  ${(props: ButtonPropsAttrs) => props.disabled ? 'transparent' : '#0000003d'}; 
+  }
+  &.notify {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #3a6df0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      right: 5px;
+      top: 5px;
+    }
   }
 `
 
@@ -56,10 +69,26 @@ export const PopoverContentItem = styled.li`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    svg {
+      font-size: 12px;
+    }
   }
   &:hover {
     background: #1890ff;
     color: #fff;
+  }
+  .notify {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #3a6df0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      left: -3px;
+      top: 3px;
+    }
   }
 `
 

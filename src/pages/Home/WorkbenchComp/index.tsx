@@ -1,15 +1,15 @@
 import {
   WorkbenchBox,
-  OpenPageListBox,
-  PaintContainer,
-  WorkbenchFooter
+  // OpenPageListBox,
+  // PaintContainer,
+  // WorkbenchFooter
 } from './styled'
 
 export const WorkbenchComp = () => (
   <WorkbenchBox>
-    <OpenPageListBox></OpenPageListBox>
+    {/* <OpenPageListBox></OpenPageListBox>
     <PaintContainer></PaintContainer>
-    <WorkbenchFooter></WorkbenchFooter>
+    <WorkbenchFooter></WorkbenchFooter> */}
   </WorkbenchBox>
 )
 

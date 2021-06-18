@@ -7,7 +7,7 @@ export const WorkbenchBox = styled.div`
   flex-direction: column;
   flex: 1;
   height: 100%;
-  background-color: #0a101b;
+  /* background-color: #0a101b; */
 `
 
 export const OpenPageListBox = styled.div`
@@ -23,5 +23,5 @@ export const PaintContainer = styled.div`
 export const WorkbenchFooter = styled.div`
   width: 100%;
   height: 28px;
-  background-color: #0a101b;
+  /* background-color: #0a101b; */
 `

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const SidebarleftIconList = styled.div`
   width: 45px;
   height: 100%;
+  background-color: rgba(16 18 27 / 706%);
+  border-right: 1px solid var(--border-color);
   li {
     display: flex;
     justify-content: center;
@@ -15,7 +17,7 @@ export const SidebarleftIconList = styled.div`
     text-align: center;
     &:hover {
       color: #fff;
-      background-color: #00000091;
+      background-color: rgba(12 15 25 / 30%);
     }
   }
 `

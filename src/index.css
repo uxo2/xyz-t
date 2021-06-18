@@ -84,30 +84,11 @@ ins {
 text-decoration:none;
 }
 
-.scroll-small::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
-
-.scroll-small::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-.scroll-large::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-.scroll-large::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
 ::-webkit-scrollbar {
   position: relative;
-  right: -10px;
-  width: 10px;
+  width: 6px;
   height: 10px;
-  background-color: #282b33;
+  background-color: var(--scrollbar-bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -116,3 +97,31 @@ text-decoration:none;
 ::-webkit-scrollbar-track-piece {
   background-color: transparent;
 }
+
+:root {
+  --theme-bg-color: rgba(16 18 27 / 40%);
+  --border-color: rgba(113 119 144 / 25%);
+  --theme-color: #f9fafb;
+  --inactive-color: rgb(113 119 144 / 78%);
+  --body-font: "Poppins", sans-serif;
+  --hover-menu-bg: rgba(12 15 25 / 30%);
+  --content-title-color: #999ba5;
+  --content-bg: rgb(146 151 179 / 13%);
+  --button-inactive: rgb(249 250 251 / 55%);
+  --dropdown-bg: #21242d;
+  --dropdown-hover: rgb(42 46 60);
+  --popup-bg: rgb(22 25 37);
+  --search-bg:  #14162b;
+  --overlay-bg: rgba(36, 39, 59, 0.3);
+  --scrollbar-bg: rgb(1 2 3 / 40%);
+ }
+
+ ::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 10px;
+ }

@@ -1,4 +1,4 @@
-import FileResourcesBox from './FileResources/index'
+import ComponentContainer from './ComponentContainer/index'
 
 import {
   SidebarLeftTool
@@ -6,7 +6,7 @@ import {
 
 const SideBarLeftToolComp = () => (
   <SidebarLeftTool className="scroll-small">
-    <FileResourcesBox></FileResourcesBox>
+    <ComponentContainer></ComponentContainer>
   </SidebarLeftTool>
 )
 
