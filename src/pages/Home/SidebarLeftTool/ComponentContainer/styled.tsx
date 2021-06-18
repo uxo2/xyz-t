@@ -7,16 +7,14 @@ export const Toolcontainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
-  
+
 export const ComponentBox = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
   height: 60px;
-  width: 80px;
-  margin: 10px;
-  border: 1px dashed #a0a7af;
+  width: 100%;
+  border-bottom: 1px solid #a0a7af;
   border-radius: 3px;
   color: #a0a7af;
   i {
@@ -24,7 +22,7 @@ export const ComponentBox = styled.div`
   }
   &:hover {
     color: #fff;
-    border: 1px dashed #fff;
+    border-bottom: 1px solid #fff;
   }
 `
 

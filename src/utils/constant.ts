@@ -9,6 +9,7 @@ import nodeJsLogo from '../assets/images/nodejsLogo.svg'
 import vueLogo from '../assets/images/vueLogo.svg'
 import css3Logo from '../assets/images/css3Logo.svg'
 import reactLogo from '../assets/images/reactLogo.svg'
+import flutterLogo from '../assets/images/flutter.png'
 
 export const SIDEBAR_LEFT_ICONS = [
   { icon: FileTextOutlined, title: '资源管理器', value: 'resources' },
@@ -27,7 +28,8 @@ export const SIDEBAR_ICONS_LIST = [
   { title: 'nodejs', link: 'nodejs', selected: false, img: nodeJsLogo, width: 26 },
   { title: 'css3', link: 'css3', selected: false, img: css3Logo, width: 26 },
   { title: 'react', link: 'react', selected: false, img: reactLogo, width: 26 },
-  { title: 'vue', link: 'vue', selected: false, img: vueLogo, width: 26 }
+  { title: 'vue', link: 'vue', selected: false, img: vueLogo, width: 26 },
+  { title: 'flutter', link: 'flutter', selected: false, img: flutterLogo, width: 23 }
 ]
 
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
@@ -42,7 +44,7 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
   {
     label: '查看', value: 'view', disabled: false, notify: true,
     children: [
-      { label: '命令面板', value: 'commandPanel', disabled: false , notify: true },
+      { label: '命令面板', value: 'commandPanel', disabled: false, notify: true },
       { label: '打开视图', value: 'commandPanel', disabled: false, divider: true, notify: false },
       {
         label: '外观', value: 'commandPanel', disabled: false, notify: true,
@@ -65,7 +67,7 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
   {
     label: '运行', value: 'run', disabled: false, notify: true,
     children: [
-      { label: '预览', value: 'preview', disabled: false, divider: true, notify: true  },
+      { label: '预览', value: 'preview', disabled: false, divider: true, notify: true },
       { label: '调试', value: 'debug', disabled: false, notify: false }
     ]
   },
