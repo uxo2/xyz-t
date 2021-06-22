@@ -9,22 +9,22 @@ declare namespace State {
   }
 
   interface App {
-    token: String
-    id: String
-    username: String
-    avatar: String
-    lastLoginTime: Number | null
+    token: string
+    id: string
+    username: string
+    avatar: string
+    lastLoginTime: number | null
   }
 
   interface ActiveFile {
-    templateStr: String
-    id: String
+    templateStr: string
+    id: string
   }
 
   interface MetaView {
-    visibleSideBarLeftTool: Boolean
-    visibleSidebarIconsList: Boolean
-    visibleSidebarRightConfigBox: Boolean
+    visibleSideBarLeftTool: boolean
+    visibleSidebarIconsList: boolean
+    visibleSidebarRightConfigBox: boolean
   }
 }
 
@@ -41,27 +41,27 @@ declare namespace CustomRouter {
 
 declare namespace Meta {
   interface HeaderDir {
-    label: String
-    value: String
-    notify: Boolean
-    disabled: Boolean
+    label: string
+    value: string
+    notify: boolean
+    disabled: boolean
     children?: Array<FileDir>
   }
 
   interface SidebarIcons {
-    icon: String
-    title: String
-    link: String
+    icon: string
+    title: string
+    link: string
   }
 
   export interface FileDir {
-    label: String
-    value: String
-    disabled: Boolean
-    icon?: String
-    keymaster?: String
-    divider?: Boolean
-    notify: Boolean
+    label: string
+    value: string
+    disabled: boolean
+    icon?: string
+    keymaster?: string
+    divider?: boolean
+    notify: boolean
     onClick?: Function | null,
     children?: Array<FileDir>
   }

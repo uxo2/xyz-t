@@ -5,8 +5,6 @@ import {
 import {
   RightOutlined
 } from '@ant-design/icons'
-// import imgLogo from '../../assets/images/logo.png'
-// import { logofallback } from '../../assets/images/base64.js'
 import {
   HomeHeaderBox,
   Button,
@@ -65,15 +63,15 @@ const HomeHeaderBoxComp = () => {
 
           if (file.children && !file.disabled) {
             children = <Popover
-                content={(CodeContentDOM(file.children || []))}
-                placement="bottomLeft"
-                color="#f2f4f5"
-                overlayClassName="uxo-popover"
-                getPopupContainer={() => document.querySelector('.menu-item') || document.body}
-                trigger="click"
-              >
-                <Button disabled={file.disabled} className={file.notify ? 'notify' : ''}>{file.label}</Button>
-              </Popover>
+              content={(CodeContentDOM(file.children || []))}
+              placement="bottomLeft"
+              color="#f2f4f5"
+              overlayClassName="uxo-popover"
+              getPopupContainer={() => document.querySelector('.menu-item') || document.body}
+              trigger="click"
+            >
+              <Button disabled={file.disabled} className={file.notify ? 'notify' : ''}>{file.label}</Button>
+            </Popover>
           } else {
             children = <Button disabled key={index} className="menu-item">{file.label}</Button>
           }

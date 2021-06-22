@@ -5,8 +5,7 @@ export const SidebarleftIconList = styled.div`
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgba(16 18 27 / 706%);
-  border-right: 1px solid var(--border-color);
+  background-color: #333333;
   li {
     display: flex;
     justify-content: center;
@@ -19,7 +18,20 @@ export const SidebarleftIconList = styled.div`
     text-align: center;
     &:hover {
       color: #fff;
-      background-color: rgba(12 15 25 / 30%);
+      background-color: #252526;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.acitiveLink {
+        background: #252526;
+      }
     }
   }
 `

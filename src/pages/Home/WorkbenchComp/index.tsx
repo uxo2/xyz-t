@@ -1,15 +1,14 @@
+import { Route } from 'react-router-dom'
+import ElementPlus from '../../ElementPlus/index'
+import AntDesign from '../../AntDesign/index'
 import {
-  WorkbenchBox,
-  // OpenPageListBox,
-  // PaintContainer,
-  // WorkbenchFooter
+  WorkbenchBox
 } from './styled'
 
 export const WorkbenchComp = () => (
   <WorkbenchBox>
-    {/* <OpenPageListBox></OpenPageListBox>
-    <PaintContainer></PaintContainer>
-    <WorkbenchFooter></WorkbenchFooter> */}
+    <Route path="/component-docs/elementPlus" component={ElementPlus} exact></Route>
+    <Route path="/component-docs/antDesign" component={AntDesign} exact></Route>
   </WorkbenchBox>
 )
 

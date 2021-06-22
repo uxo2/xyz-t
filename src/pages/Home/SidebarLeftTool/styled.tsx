@@ -5,7 +5,6 @@ export const SidebarLeftTool = styled.div`
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
-  border-right: 1px solid var(--border-color);
-  background-color: var(--theme-bg-color);
+  background-color: #252526;
   color: var(--theme-color);
 `

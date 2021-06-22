@@ -6,7 +6,7 @@ export const HomeHeaderBox = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgba(16 18 27 / 30%);
+  background-color: #3c3c3c;
   border-bottom: 1px solid var(--border-color);
   .logo-box {
     width: 100%;
