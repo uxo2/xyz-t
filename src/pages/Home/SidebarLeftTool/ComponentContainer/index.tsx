@@ -1,11 +1,5 @@
-import {
-  Toolcontainer,
-  ComponentBox,
-  TitleLabel
-} from './styled'
-import {
-  ElementComponentList
-} from '../../../../controls/index'
+import { Toolcontainer, ComponentBox, TitleLabel } from './styled'
+import { ElementComponentList } from '../../../../controls/index'
 
 export const ComponentContainer = () => <Toolcontainer>
   {

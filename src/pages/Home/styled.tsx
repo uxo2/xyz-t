@@ -7,15 +7,20 @@ export const HomePageContainer = styled.div`
   overflow: hidden;
   background-size: cover;
   background-image: url(${fullPage});
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 `
 
 export const HomeMain = styled.div`
   width: 100%;
-  height: calc(100% - 35px);
+  /* height: calc(100% - 35px); */
   overflow: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  flex:1;
 `
 
 export const HomeContent = styled.div`

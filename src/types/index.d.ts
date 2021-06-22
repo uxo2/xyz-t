@@ -25,6 +25,7 @@ declare namespace State {
     visibleSideBarLeftTool: boolean
     visibleSidebarIconsList: boolean
     visibleSidebarRightConfigBox: boolean
+    visibleHeaderBox: boolean
   }
 }
 

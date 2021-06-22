@@ -1,24 +1,16 @@
-import {
-  Image,
-  Popover
-} from 'antd'
-import {
-  RightOutlined
-} from '@ant-design/icons'
-import {
-  HomeHeaderBox,
-  Button,
-  PopoverContentItem,
-  PopoverDivider,
-  PopoverContentBox
-} from './styled'
+import { Image, Popover } from 'antd'
+import { RightOutlined } from '@ant-design/icons'
+import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox } from './styled'
 import HomeFileResources from '../HomeFileResources/index'
-import {
-  HEADER_DIR
-} from '../../../utils/constant'
+import { HEADER_DIR } from '../../../utils/constant'
+import { useAppState, useDispatch } from '../../../contexts/providers'
 import React from 'react'
 
 const HomeHeaderBoxComp = () => {
+  const {
+    metaView: { visibleHeaderBox }
+  } = useAppState()
+
   const CodeContentDOM = (file: Array<Meta.FileDir>) => (
     <PopoverContentBox>
       {
@@ -48,13 +40,24 @@ const HomeHeaderBoxComp = () => {
     </PopoverContentBox>
   )
 
+  const triggerVisibleHeaderBox = () => {
+    console.log(visibleHeaderBox)
+
+    // const dispatch = useDispatch()
+
+    console.log(useDispatch)
+  }
+
   return (
-    <HomeHeaderBox id="headerRef">
+    visibleHeaderBox ? <HomeHeaderBox id="headerRef">
       <Image
         className="logo-box"
         width={40}
         height={35}
         preview={false}
+        onClick={() => {
+          triggerVisibleHeaderBox()
+        }}
         src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
       />
       {
@@ -85,6 +88,7 @@ const HomeHeaderBoxComp = () => {
       }
       <HomeFileResources />
     </HomeHeaderBox>
+      : <div></div>
   )
 }
 

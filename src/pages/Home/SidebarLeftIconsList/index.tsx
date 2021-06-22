@@ -1,41 +1,33 @@
-import {
-  SidebarleftIconList
-} from './styled'
-import {
-  SIDEBAR_ICONS_LIST
-} from '../../../utils/constant'
-import {
-  Image
-} from 'antd'
-import { NavLink } from 'react-router-dom'
+import { SidebarleftIconList, SidebarContainer, SidebarFooterList } from './styled'
+import { SIDEBAR_ICONS_LIST } from '../../../utils/constant'
 
 const SidebarLeft = () => (
-  <SidebarleftIconList>
-    {
-      SIDEBAR_ICONS_LIST.map((item, index) => (
-        <li key={index}>
-          <NavLink
-            activeClassName="acitiveLink"
-            to={`/component-docs/${item.link}`}
+  <SidebarContainer>
+    <SidebarleftIconList>
+      {
+        SIDEBAR_ICONS_LIST[0].map((item, index) => (
+          <li
+            key={index}
             title={item.title}
             onClick={() => {
-              // dispatch({
-              //   type: ComponentActions.UpdateHeaderSearchEditable,
-              //   payload: {
-              //     searchBarEditable: true
-              //   }
-              // })
-            }}>
-            <Image
-              width={item.width}
-              src={item.img}
-              preview={false}
-            />
-          </NavLink>
-        </li>
-      ))
-    }
-  </SidebarleftIconList>
+
+            }}
+          >
+            <i className={item.icon}></i>
+          </li>
+        ))
+      }
+    </SidebarleftIconList>
+    <SidebarFooterList>
+      {
+        SIDEBAR_ICONS_LIST[1].map((item, index) => (
+          <li key={index} title={item.title}>
+            <i className={item.icon}></i>
+          </li>
+        ))
+      }
+    </SidebarFooterList>
+  </SidebarContainer>
 )
 
 export default SidebarLeft

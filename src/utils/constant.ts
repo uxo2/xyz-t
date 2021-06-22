@@ -1,15 +1,4 @@
 import { FileTextOutlined, SearchOutlined, BugOutlined } from '@ant-design/icons'
-import antdDesignLogo from '../assets/images/antDesign.svg'
-import elementLogo from '../assets/images/elementLogo.svg'
-import webpackLogo from '../assets/images/webpack.svg'
-import gulpLogo from '../assets/images/gulp.svg'
-import angularMaterialLogo from '../assets/images/angularMaterial.svg'
-import zhihuLogo from '../assets/images/zhihuLogo.svg'
-import nodeJsLogo from '../assets/images/nodejsLogo.svg'
-import vueLogo from '../assets/images/vueLogo.svg'
-import css3Logo from '../assets/images/css3Logo.svg'
-import reactLogo from '../assets/images/reactLogo.svg'
-import flutterLogo from '../assets/images/flutter.png'
 
 export const SIDEBAR_LEFT_ICONS = [
   { icon: FileTextOutlined, title: '资源管理器', value: 'resources' },
@@ -19,17 +8,16 @@ export const SIDEBAR_LEFT_ICONS = [
 ]
 
 export const SIDEBAR_ICONS_LIST = [
-  { title: 'element-plus', link: 'elementPlus', selected: false, img: elementLogo, width: 26 },
-  { title: 'ant Design', link: 'antDesign', selected: false, img: antdDesignLogo, width: 24 },
-  { title: 'webpack', link: 'webpack', selected: false, img: webpackLogo, width: 26 },
-  { title: 'gulp', link: 'gulp', selected: false, img: gulpLogo, width: 26 },
-  { title: 'angularMaterial', link: 'angularMaterial', selected: false, img: angularMaterialLogo, width: 26 },
-  { title: 'zhihu', link: 'zhihu', selected: false, img: zhihuLogo, width: 26 },
-  { title: 'nodejs', link: 'nodejs', selected: false, img: nodeJsLogo, width: 26 },
-  { title: 'css3', link: 'css3', selected: false, img: css3Logo, width: 26 },
-  { title: 'react', link: 'react', selected: false, img: reactLogo, width: 26 },
-  { title: 'vue', link: 'vue', selected: false, img: vueLogo, width: 26 },
-  { title: 'flutter', link: 'flutter', selected: false, img: flutterLogo, width: 23 }
+  [
+    { title: '资源管理器', value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', size: 26 },
+    { title: '搜索', value: 'search', icon: 'iconsearch iconfont', size: 24 },
+    { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', size: 26 },
+    { title: '扩展', value: 'extend', icon: 'iconleimupinleifenleileibie iconfont', size: 26 }
+  ],
+  [
+    { title: '账户', icon: 'iconfenxiang iconfont', size: 26 },
+    { title: '管理', icon: 'iconsetting iconfont', size: 24 }
+  ]
 ]
 
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
