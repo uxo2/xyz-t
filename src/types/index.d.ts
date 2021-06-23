@@ -26,6 +26,7 @@ declare namespace State {
     visibleSidebarIconsList: boolean
     visibleSidebarRightConfigBox: boolean
     visibleHeaderBox: boolean
+    visibleInitPropsModal: boolean
   }
 }
 

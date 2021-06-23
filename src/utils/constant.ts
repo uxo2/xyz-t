@@ -20,6 +20,17 @@ export const SIDEBAR_ICONS_LIST = [
   ]
 ]
 
+export const ModalDefaultAttrs = {
+  maskClosable: false,
+  closable: false,
+  wrapClassName: 'custom-wrap-classname__modal',
+  width: 800,
+  style: {
+    top: 35
+  },
+  footer: null
+}
+
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
   {
     label: '首页', value: 'homePage', disabled: false, notify: false,
