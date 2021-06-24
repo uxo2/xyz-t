@@ -10,13 +10,14 @@ export const SIDEBAR_LEFT_ICONS = [
 export const SIDEBAR_ICONS_LIST = [
   [
     { title: '资源管理器', value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', size: 26 },
+    { title: '工具箱', value: 'tools', icon: 'iconfont iconshujuzhongjian', size: 24 },
     { title: '搜索', value: 'search', icon: 'iconsearch iconfont', size: 24 },
     { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', size: 26 },
-    { title: '扩展', value: 'extend', icon: 'iconleimupinleifenleileibie iconfont', size: 26 }
+    { title: '扩展', value: 'extend', icon: 'iconkuaixuanzhong iconfont', size: 26 }
   ],
   [
-    { title: '账户', icon: 'iconfenxiang iconfont', size: 26 },
-    { title: '管理', icon: 'iconsetting iconfont', size: 24 }
+    { title: '账户', value: 'counter', icon: 'iconfenxiang iconfont', size: 26 },
+    { title: '管理', value: 'manage', icon: 'iconsetting iconfont', size: 24 }
   ]
 ]
 

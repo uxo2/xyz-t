@@ -2,7 +2,7 @@ import HomeHeaderComp from './HomeHeaderComp/index'
 import SidebarleftIconList from './SidebarLeftIconsList/index'
 import SideBarLeftToolComp from './SidebarLeftTool/index'
 import WorkbenchComp from './WorkbenchComp/index'
-import InitPropsModal from './InitPropsModal/index'
+// import InitPropsModal from './InitPropsModal/index'
 import {
   HomePageContainer,
   HomeMain
@@ -16,7 +16,7 @@ const HomePage = () => (
       <SideBarLeftToolComp />
       <WorkbenchComp />
     </HomeMain>
-    <InitPropsModal></InitPropsModal>
+    {/* <InitPropsModal></InitPropsModal> */}
   </HomePageContainer>
 )
 

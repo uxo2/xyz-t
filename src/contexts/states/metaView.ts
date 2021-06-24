@@ -1,5 +1,6 @@
 export const InitMetaView: State.MetaView = {
   visibleSideBarLeftTool: true,
+  selectedSideBarLeftIconLabel: 'resourceManager',
   visibleSidebarIconsList: true,
   visibleSidebarRightConfigBox: true,
   visibleHeaderBox: true,

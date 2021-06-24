@@ -1,12 +1,16 @@
+import React from 'react'
+import { useHistory } from 'react-router'
 import { Image, Popover } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
 import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox } from './styled'
 import HomeFileResources from '../HomeFileResources/index'
 import { HEADER_DIR } from '../../../utils/constant'
 import { useAppState, useDispatch } from '../../../contexts/providers'
-import React from 'react'
+import { AppActions } from '../.././../contexts/actions'
 
 const HomeHeaderBoxComp = () => {
+  const dispatch = useDispatch()
+  const history = useHistory()
   const {
     metaView: { visibleHeaderBox }
   } = useAppState()
@@ -40,23 +44,19 @@ const HomeHeaderBoxComp = () => {
     </PopoverContentBox>
   )
 
-  const triggerVisibleHeaderBox = () => {
-    console.log(visibleHeaderBox)
-
-    // const dispatch = useDispatch()
-
-    console.log(useDispatch)
-  }
-
   return (
     visibleHeaderBox ? <HomeHeaderBox id="headerRef">
       <Image
         className="logo-box"
-        width={40}
+        width={45}
         height={35}
         preview={false}
         onClick={() => {
-          triggerVisibleHeaderBox()
+          history.push(`/`)
+          dispatch({
+            type: AppActions.BackHomePage,
+            payload: {}
+          })
         }}
         src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
       />

@@ -3,6 +3,10 @@ declare namespace State {
     app: App
   }
 
+  export interface PagePayload extends MetaView, ActiveFile, App {
+
+  }
+
   interface PageState {
     activeFile: ActiveFile
     metaView: MetaView
@@ -22,6 +26,7 @@ declare namespace State {
   }
 
   interface MetaView {
+    selectedSideBarLeftIconLabel: string
     visibleSideBarLeftTool: boolean
     visibleSidebarIconsList: boolean
     visibleSidebarRightConfigBox: boolean
