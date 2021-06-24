@@ -1,25 +1,27 @@
 import { FileTextOutlined, SearchOutlined, BugOutlined } from '@ant-design/icons'
+import FileResourceProject from '../pages/Home/SidebarLeftTool/FileResourceProject'
+import ComponentContainer from '../pages/Home/SidebarLeftTool/ComponentContainer'
 
 export const SIDEBAR_LEFT_ICONS = [
-  { icon: FileTextOutlined, title: '资源管理器', value: 'resources' },
+  { icon: FileTextOutlined, title: '资源管理器', value: 'resources', },
   { icon: SearchOutlined, title: '搜索', value: 'search' },
   { icon: FileTextOutlined, title: '更改', value: 'modify' },
   { icon: BugOutlined, title: 'debug', value: 'preivew' }
 ]
 
-export const SIDEBAR_ICONS_LIST = [
-  [
-    { title: '资源管理器', value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', size: 26 },
-    { title: '工具箱', value: 'tools', icon: 'iconfont iconshujuzhongjian', size: 24 },
-    { title: '搜索', value: 'search', icon: 'iconsearch iconfont', size: 24 },
-    { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', size: 26 },
-    { title: '扩展', value: 'extend', icon: 'iconkuaixuanzhong iconfont', size: 26 }
+export const SIDEBAR_ICONS_LIST = {
+  header: [
+    { title: '资源管理器', value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', comp: FileResourceProject, size: 26 },
+    { title: '工具箱', value: 'tools', icon: 'iconfont iconshujuzhongjian', comp: ComponentContainer, size: 24 },
+    { title: '搜索', value: 'search', icon: 'iconsearch iconfont', comp: FileResourceProject, size: 24 },
+    { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', comp: FileResourceProject, size: 26 },
+    { title: '扩展', value: 'extend', icon: 'iconkuaixuanzhong iconfont', comp: FileResourceProject, size: 26 }
   ],
-  [
+  footer: [
     { title: '账户', value: 'counter', icon: 'iconfenxiang iconfont', size: 26 },
     { title: '管理', value: 'manage', icon: 'iconsetting iconfont', size: 24 }
   ]
-]
+}
 
 export const ModalDefaultAttrs = {
   maskClosable: false,
@@ -82,7 +84,39 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
     label: '帮助', value: 'run', disabled: false, notify: false,
     children: [
       { label: '隐私声明', value: 'pirvacyStatement', disabled: false, divider: true, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
+      { label: '查看许可证', value: 'licence', disabled: false, notify: false },
       { label: '查看许可证', value: 'licence', disabled: false, notify: false }
+
     ]
   }
 ]

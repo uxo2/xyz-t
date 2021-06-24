@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const Toolcontainer = styled.div`
   color: #fff;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
 `
 
 export const ComponentBox = styled.div`

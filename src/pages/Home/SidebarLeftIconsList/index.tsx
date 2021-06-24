@@ -16,11 +16,11 @@ const SidebarLeft = () => {
     <SidebarContainer>
       <SidebarleftIconList>
         {
-          SIDEBAR_ICONS_LIST[0].map((item, index) => (
+          SIDEBAR_ICONS_LIST.header.map((item, index) => (
             <SideBarIconLi
               key={index}
               title={item.title}
-              selected={selectedSideBarLeftIconLabel === item.value}
+              selected={item.value === selectedSideBarLeftIconLabel && visibleSideBarLeftTool}
               onClick={() => {
                 dispatch({
                   type: PageActions.VisibleSidebarLeftIconContainer,
@@ -38,7 +38,7 @@ const SidebarLeft = () => {
       </SidebarleftIconList>
       <SidebarFooterList>
         {
-          SIDEBAR_ICONS_LIST[1].map((item, index) => (
+          SIDEBAR_ICONS_LIST.footer.map((item, index) => (
             <li
               key={index}
               title={item.title}

@@ -18,6 +18,8 @@ body {
 .ant-popover-inner-content {
   padding: 8px !important;
   border-radius: 8px;
+  max-height: 400px;
+  overflow: hidden auto;
 }
 
 .uxo-popover {
@@ -90,4 +92,8 @@ ul {
 
 .custom-wrap-classname__modal .ant-modal-body {
   padding: 0;
+}
+
+.ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before, .ant-tree.ant-tree-directory .ant-tree-treenode-selected::before {
+  background-color: #1890ff6e !important;
 }
