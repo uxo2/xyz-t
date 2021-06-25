@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import fullPage from '../../assets/images/fullPage.jpg'
+// import fullPage from '../../assets/images/fullPage.jpg'
+// background-image: url(fullPage});
 
 export const HomePageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-size: cover;
-  background-image: url(${fullPage});
+ 
   display: flex;
   justify-content: flex-start;
   align-items: center;

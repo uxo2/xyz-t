@@ -14,6 +14,14 @@ export const pageReducer = (
           visibleSideBarLeftTool: payload.visibleSideBarLeftTool
         }
       }
+    case PageActions.VisibleRightConfigComp:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          visibleSidebarRightConfigBox: payload.visibleSidebarRightConfigBox
+        }
+      }
     default:
       return state
   }

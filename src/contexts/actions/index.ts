@@ -13,7 +13,8 @@ export enum AppActions {
 }
 
 export enum PageActions {
-  VisibleSidebarLeftIconContainer = 'visibleSidebarLeftIconContainer'
+  VisibleSidebarLeftIconContainer = 'visibleSidebarLeftIconContainer',
+  VisibleRightConfigComp = 'visibleRightConfigComp'
 }
 
 export enum ComponentActions {

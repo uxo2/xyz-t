@@ -1,6 +1,5 @@
-import ComponentContainer from './ComponentContainer/index'
 import { useAppState } from '../../../contexts/providers'
-
+import { SIDEBAR_ICONS_LIST } from '../../../utils/constant'
 import {
   SidebarLeftTool
 } from './styled'
@@ -8,12 +7,16 @@ import {
 const SideBarLeftToolComp = () => {
   const {
     metaView: {
-      visibleSideBarLeftTool
+      visibleSideBarLeftTool,
+      selectedSideBarLeftIconLabel
     }
   } = useAppState()
+
+  const ComponentMap = SIDEBAR_ICONS_LIST.header.find(item => item.value === selectedSideBarLeftIconLabel)
+
   return (
     <SidebarLeftTool className="scroll-small" visible={visibleSideBarLeftTool}>
-      <ComponentContainer></ComponentContainer>
+      {ComponentMap ? <ComponentMap.comp /> : ""}
     </SidebarLeftTool>
   )
 }
