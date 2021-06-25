@@ -16,7 +16,7 @@ const SideBarLeftToolComp = () => {
 
   return (
     <SidebarLeftTool className="scroll-small" visible={visibleSideBarLeftTool}>
-      {ComponentMap ? <ComponentMap.comp /> : ""}
+      {ComponentMap ? <ComponentMap.Comp /> : ""}
     </SidebarLeftTool>
   )
 }

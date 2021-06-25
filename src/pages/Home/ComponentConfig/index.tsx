@@ -12,7 +12,6 @@ const ComponentConfig = () => {
 
   return (
     <ComponentConfigContainer visible={visibleSidebarRightConfigBox}>
-      12
       <ComponentConfigClose
         className="component-config-visible-btn"
         onClick={() => {

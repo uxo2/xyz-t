@@ -31,6 +31,7 @@ declare namespace State {
     visibleSidebarIconsList: boolean
     visibleSidebarRightConfigBox: boolean
     visibleHeaderBox: boolean
+    auxliaryCompName: string
     visibleInitPropsModal: boolean
   }
 }
@@ -52,6 +53,7 @@ declare namespace Meta {
     value: string
     notify: boolean
     disabled: boolean
+    visible: false,
     children?: Array<FileDir>
   }
 
@@ -69,7 +71,8 @@ declare namespace Meta {
     keymaster?: string
     divider?: boolean
     notify: boolean
-    onClick?: Function | null,
+    onClick?: Function | null
+    Comp?: React.FunctionComponent<any>
     children?: Array<FileDir>
   }
 }
