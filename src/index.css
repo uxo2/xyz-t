@@ -95,5 +95,8 @@ ul {
 }
 
 .ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before, .ant-tree.ant-tree-directory .ant-tree-treenode-selected::before {
-  background-color: #1890ff6e !important;
+  background-color: #1e1e1e !important
+}
+.ant-tree-treenode:hover::before {
+  background-color: #333 !important;
 }

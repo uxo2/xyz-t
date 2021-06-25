@@ -42,6 +42,3 @@ theme配置
 源码是否构建typescript
 是否需要eslint、react、react-router-dom 等基础NPM包
 本项目只为前端构建项目。并未考虑后端配置，前端所有API均为mock数据，提供为第三方公司二次开发。
-
-
-

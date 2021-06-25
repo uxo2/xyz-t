@@ -10,6 +10,8 @@ const AppDiv = styled.div`
   width: 100vw;
   height: 100vh;
   background: #0a101b;
+  min-height: 600px;
+  min-width: 1200px;
 `
 
 const App = () => {
