@@ -13,6 +13,7 @@ export const WorkbenchBox = styled.div`
   color: #fff;
   position: relative;
   box-sizing: border-box;
+  overflow: hidden;
 `
 
 export const WorkbenchFooter = styled.div`

@@ -7,9 +7,13 @@ declare namespace State {
 
   }
 
+  interface WorkbenchLoad {
+    activeFile: ActiveFile | null
+    openFileList: Array<ActiveFile>
+  } 
   interface PageState {
-    activeFile: ActiveFile
     metaView: MetaView
+    workbench: WorkbenchLoad
   }
 
   interface App {
@@ -21,8 +25,10 @@ declare namespace State {
   }
 
   interface ActiveFile {
-    templateStr: string
     id: string
+    title: string
+    codeStr: string
+    routerPath: string
   }
 
   interface MetaView {

@@ -10,6 +10,7 @@ export enum PageActions {
 }
 
 export enum ComponentActions {
+  UpdateActiveFile = 'updateActiveFile',
   UpdateHeaderSearchEditable = 'updateHeaderSearchEditable',
   UpdateFilterNoResult = 'updateFilterNoResult',
   UpdateHeaderMobileMenuVisible = 'updateHeaderMobileMenuVisible',

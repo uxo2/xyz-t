@@ -42,9 +42,9 @@ ul {
 
 ::-webkit-scrollbar {
   position: relative;
-  width: 6px;
-  height: 10px;
-  background-color: var(--scrollbar-bg);
+  width: 5px;
+  height: 5px;
+  background-color: #262531;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -78,7 +78,7 @@ ul {
 }
  
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-bg);
+  background: #bfbfbf;
   border-radius: 10px;
 }
 

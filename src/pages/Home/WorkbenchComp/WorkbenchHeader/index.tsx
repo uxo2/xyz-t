@@ -1,5 +1,6 @@
 import { StepBackwardOutlined, StepForwardOutlined, ClearOutlined, CompressOutlined, EyeOutlined } from '@ant-design/icons'
 import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
+import OpenResourceList from './OpenResourceList'
 import { Slider, message } from 'antd'
 
 const WorkbenchHeader = () => (
@@ -26,6 +27,7 @@ const WorkbenchHeader = () => (
         <CompressOutlined />
       </Button>
     </ToolBtnComp>
+    <OpenResourceList />
     <ToolBtnRightComp>
       <Button>
         <EyeOutlined />

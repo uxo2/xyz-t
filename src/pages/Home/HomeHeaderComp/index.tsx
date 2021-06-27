@@ -3,7 +3,6 @@ import { useHistory } from 'react-router'
 import { Image, Popover } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
 import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox } from './styled'
-import HomeFileResources from '../HomeFileResources/index'
 import { HEADER_DIR } from '../../../utils/constant'
 import { useAppState, useDispatch } from '../../../contexts/providers'
 import { AppActions, PageActions } from '../.././../contexts/actions'
@@ -104,7 +103,6 @@ const HomeHeaderBoxComp = () => {
           )
         })
       }
-      <HomeFileResources />
     </HomeHeaderBox>
       : <div></div>
   )
