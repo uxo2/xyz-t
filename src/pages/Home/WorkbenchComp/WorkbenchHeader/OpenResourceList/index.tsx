@@ -10,7 +10,7 @@ const OpenResourceList = () => {
   const dispatch = useDispatch()
 
   return (
-    <OpenResourceListContainer>
+    <OpenResourceListContainer empty={openFileList.length === 0}>
       {
         openFileList.length ? openFileList.map((item, index) => (
           <OpenResourceItem key={index} select={activeFile?.id === item.id }>
