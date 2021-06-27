@@ -22,6 +22,16 @@ export const pageReducer = (
           visibleSidebarRightConfigBox: payload.visibleSidebarRightConfigBox
         }
       }
+    case PageActions.visibleAuxiliaryComp:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          visibleSidebarRightConfigBox: false,
+          auxliaryCompName: payload.auxliaryCompName
+        }
+      }
+    
     default:
       return state
   }

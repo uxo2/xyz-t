@@ -13,7 +13,6 @@ export const WorkbenchHeaderContainer = styled.div`
 `
 
 export const ToolBtnComp = styled.div`
-  flex: 1;
   height: 100%;
   display: flex;
   justify-content: flex-start;

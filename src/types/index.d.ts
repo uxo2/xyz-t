@@ -7,9 +7,13 @@ declare namespace State {
 
   }
 
+  interface WorkbenchLoad {
+    activeFile: ActiveFile | null
+    openFileList: Array<ActiveFile>
+  } 
   interface PageState {
-    activeFile: ActiveFile
     metaView: MetaView
+    workbench: WorkbenchLoad
   }
 
   interface App {
@@ -21,8 +25,10 @@ declare namespace State {
   }
 
   interface ActiveFile {
-    templateStr: string
     id: string
+    title: string
+    codeStr: string
+    routerPath: string
   }
 
   interface MetaView {
@@ -31,6 +37,7 @@ declare namespace State {
     visibleSidebarIconsList: boolean
     visibleSidebarRightConfigBox: boolean
     visibleHeaderBox: boolean
+    auxliaryCompName: string
     visibleInitPropsModal: boolean
   }
 }
@@ -52,6 +59,7 @@ declare namespace Meta {
     value: string
     notify: boolean
     disabled: boolean
+    visible: false,
     children?: Array<FileDir>
   }
 
@@ -69,7 +77,8 @@ declare namespace Meta {
     keymaster?: string
     divider?: boolean
     notify: boolean
-    onClick?: Function | null,
+    onClick?: Function | null
+    Comp?: React.FunctionComponent<any>
     children?: Array<FileDir>
   }
 }

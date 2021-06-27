@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import iframeBg from '../../../assets/images/iframeBG.png'
+import divider1 from '../../../assets/images/divider1.png'
+import divider2 from '../../../assets/images/divider2.png'
 
 export const WorkbenchBox = styled.div`
   display: flex;
@@ -11,6 +13,7 @@ export const WorkbenchBox = styled.div`
   color: #fff;
   position: relative;
   box-sizing: border-box;
+  overflow: hidden;
 `
 
 export const WorkbenchFooter = styled.div`
@@ -84,7 +87,7 @@ export const DividerWorkbenchVertical = styled.div`
   top: 20px;
   bottom: 40px;
   width: 20px;
-  background-image: url('https://appcube.cn-north-4.huaweicloud.com/besBaas/baas/dmax/img/icon-ruler-v.3752979.png');
+  background-image: url(${divider2});
   background-repeat: repeat-y;
   background-position-y: -30px;
   border-right: solid 1px #333f57;
@@ -113,7 +116,7 @@ export const DividerWorkbenchHorizontal = styled.div`
   right: 40px;
   height: 20px;
   background-position-x: 20px;
-  background-image: url('https://appcube.cn-north-4.huaweicloud.com/besBaas/baas/dmax/img/icon-ruler-h.8a6d23f.png');
+  background-image: url(${divider1});
   background-repeat: repeat-x;
   border-bottom: solid 1px #333f57;
   box-sizing: border-box;

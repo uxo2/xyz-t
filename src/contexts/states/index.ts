@@ -1,11 +1,11 @@
 import initApp from './app'
 import initMetaView from './metaView'
-import initAcitveFile from './activeFile'
+import InitWorkbench from './workbench'
 
 const initState: State.AppState = {
   app: initApp,
   metaView: initMetaView,
-  activeFile: initAcitveFile
+  workbench: InitWorkbench
 }
 
 export default initState

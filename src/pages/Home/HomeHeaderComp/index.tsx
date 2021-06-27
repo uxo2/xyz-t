@@ -3,10 +3,10 @@ import { useHistory } from 'react-router'
 import { Image, Popover } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
 import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox } from './styled'
-import HomeFileResources from '../HomeFileResources/index'
 import { HEADER_DIR } from '../../../utils/constant'
 import { useAppState, useDispatch } from '../../../contexts/providers'
-import { AppActions } from '../.././../contexts/actions'
+import { AppActions, PageActions } from '../.././../contexts/actions'
+import logo from '../../../assets/images/logo.svg'
 
 const HomeHeaderBoxComp = () => {
   const dispatch = useDispatch()
@@ -14,6 +14,16 @@ const HomeHeaderBoxComp = () => {
   const {
     metaView: { visibleHeaderBox }
   } = useAppState()
+  const handleClickPopoverLabel = (value: string) => {
+    if (value === 'operationGuide') {
+      dispatch({
+        type: PageActions.visibleAuxiliaryComp,
+        payload: {
+          auxliaryCompName: value
+        }
+      })
+    }
+  }
 
   const CodeContentDOM = (file: Array<Meta.FileDir>) => (
     <PopoverContentBox>
@@ -34,7 +44,14 @@ const HomeHeaderBoxComp = () => {
                     <RightOutlined />
                   </Popover>
                   :
-                  <div className={item.notify ? 'notify' : ''}>{item.label}</div>
+                  <div
+                    className={item.notify ? 'notify' : ''}
+                    onClick={() => {
+                      handleClickPopoverLabel(item.value);
+                    }}
+                  >
+                    {item.label}
+                  </div>
               }
             </PopoverContentItem>
             {item.divider ? <PopoverDivider></PopoverDivider> : ''}
@@ -58,7 +75,7 @@ const HomeHeaderBoxComp = () => {
             payload: {}
           })
         }}
-        src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+        src={logo}
       />
       {
         HEADER_DIR.map((file, index) => {
@@ -86,7 +103,6 @@ const HomeHeaderBoxComp = () => {
           )
         })
       }
-      <HomeFileResources />
     </HomeHeaderBox>
       : <div></div>
   )
