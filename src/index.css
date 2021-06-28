@@ -15,7 +15,14 @@ body {
 .ant-popover-arrow {
   display: none !important;
 }
-.ant-popover-inner-content {
+.header-menu-item .ant-popover-inner-content {
+  padding: 8px !important;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow: hidden auto;
+}
+
+.header-menu-item .ant-popover-inner-content {
   padding: 8px !important;
   border-radius: 8px;
   max-height: 400px;

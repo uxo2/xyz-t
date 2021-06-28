@@ -71,6 +71,14 @@ export const HeaderFileTitleBox = styled.div`
   align-items: center;
   padding: 0 10px;
   user-select: none;
+  .resource-manage-popover {
+    .ant-popover-inner-content {
+      padding: 2px;
+    }
+    .ant-popover-inner {
+      background-color: rgb(242, 244, 245);
+    }
+  }
 `
 
 export const ResourceManagePopoverContainer = styled.div`

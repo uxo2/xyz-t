@@ -1,6 +1,9 @@
 import { FileTextOutlined, SearchOutlined, BugOutlined } from '@ant-design/icons'
 import FileResourceProject from '../pages/Home/SidebarLeftTool/FileResourceProject'
 import ComponentContainer from '../pages/Home/SidebarLeftTool/ComponentContainer'
+import SearchModel from '../pages/Home/SidebarLeftTool/SearchModel'
+import DebugModel from '../pages/Home/SidebarLeftTool/DebugModel'
+import ExtendTool from '../pages/Home/SidebarLeftTool/ExtendTool'
 import OperationGuide from '../pages/Home/AuxliaryComp/OperationGuide'
 
 export const SIDEBAR_LEFT_ICONS = [
@@ -14,9 +17,9 @@ export const SIDEBAR_ICONS_LIST = {
   header: [
     { title: '资源管理器', value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', Comp: FileResourceProject, size: 26 },
     { title: '工具箱', value: 'tools', icon: 'iconfont iconshujuzhongjian', Comp: ComponentContainer, size: 24 },
-    { title: '搜索', value: 'search', icon: 'iconsearch iconfont', Comp: FileResourceProject, size: 24 },
-    { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', Comp: FileResourceProject, size: 26 },
-    { title: '扩展', value: 'extend', icon: 'iconkuaixuanzhong iconfont', Comp: FileResourceProject, size: 26 }
+    { title: '搜索', value: 'search', icon: 'iconsearch iconfont', Comp: SearchModel, size: 24 },
+    { title: '运行和调试', value: 'debugAndRun', icon: 'iconrun1 iconfont', Comp: DebugModel, size: 26 },
+    { title: '扩展', value: 'extend', icon: 'iconkuaixuanzhong iconfont', Comp: ExtendTool, size: 26 }
   ],
   footer: [
     { title: '账户', value: 'counter', icon: 'iconfenxiang iconfont', size: 26 },
@@ -121,4 +124,3 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
     ]
   }
 ]
-

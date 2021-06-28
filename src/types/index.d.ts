@@ -10,8 +10,8 @@ declare namespace State {
   interface WorkbenchLoad {
     activeFile: ActiveFile | null
     openFileList: Array<ActiveFile>
-    fileResourceManage: Object<{pageListData: Array<ActiveFile>, staticResourceData: []}>
-  } 
+    fileResourceManage: Object<{ pageListData: Array<ActiveFile>, staticResourceData: [] }>
+  }
 
 
   interface PageState {
@@ -29,7 +29,7 @@ declare namespace State {
 
   interface staticResource {
     id: string
-    
+
   }
   interface ActiveFile {
     id: string
@@ -46,7 +46,12 @@ declare namespace State {
     visibleHeaderBox: boolean
     auxliaryCompName: string
     visibleInitPropsModal: boolean
-    fileResourceManage: Object<{visiblePageConfig: boolean, visibleStaticResource: boolean}>
+    fileResourceManage: FileResourceManage
+  }
+
+  interface FileResourceManage {
+    visiblePageConfig: boolean
+    visibleStaticResource: boolean
   }
 }
 
