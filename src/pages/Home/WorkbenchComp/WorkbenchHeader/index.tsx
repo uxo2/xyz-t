@@ -2,22 +2,23 @@ import { StepBackwardOutlined, StepForwardOutlined, ClearOutlined, CompressOutli
 import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
 import OpenResourceList from './OpenResourceList'
 import { Slider, message } from 'antd'
+import i18n from '../../../../utils/i18n'
 
 const WorkbenchHeader = () => (
   <WorkbenchHeaderContainer>
     <ToolBtnComp>
       <Button onClick={() => {
-        message.warning('暂未完成，尽请期待。。。')
+        message.warning(i18n.t('toast.unfinish'))
       }}>
         <StepBackwardOutlined />
       </Button>
       <Button onClick={() => {
-        message.warning('暂未完成，尽请期待。。。')
+        message.warning(i18n.t('toast.unfinish'))
       }}>
         <StepForwardOutlined />
       </Button>
       <Button onClick={() => {
-        message.warning('未选中需清除样式的组件！')
+        message.warning('i')
       }}>
         <ClearOutlined />
       </Button>

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface SplitViewPaneProps {
+  visible: boolean
+}
+
 export const FileResourceProjectContainer = styled.div`
   color: #fff;
   width: 100%;
@@ -71,6 +75,12 @@ export const HeaderFileTitleBox = styled.div`
   align-items: center;
   padding: 0 10px;
   user-select: none;
+  .title {
+    color: #d9d9d9;
+    font-size: 12px;
+    text-align: center;
+    flex: 1;
+  }
   .resource-manage-popover {
     .ant-popover-inner-content {
       padding: 2px;
@@ -109,4 +119,41 @@ export const ResourceManageList = styled.div`
   .label {
     text-indent: 5px;
   }
+`
+
+export const SplitView = styled.div`
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 30px);
+  display: flex;
+  flex-direction: column;
+`
+
+export const SplitViewHeader = styled.div`
+  width: 100%;
+  line-height: 27px;
+  background-color: rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(204, 204, 204, 0.2);
+  text-indent: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: #000000 0 -1px 9px -1px inset;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 5px;
+  .resource-item-title {
+    color: #84939f;
+  }
+  span {
+    color: #666;
+  }
+`
+
+export const SplitViewPane = styled.div`
+  overflow: hidden;
+  transition: 0.25s;
+  overflow: hidden;
+  height: 0;
+  flex: ${(props: SplitViewPaneProps) => props.visible ? 1 : 'none'};
 `

@@ -34,7 +34,6 @@ export const WorkbenchComp = () => {
         <ScrollRight></ScrollRight>
         <ScrollBottom></ScrollBottom>
       </IframeContainer>
-
     </WorkbenchBox>
   )
 }

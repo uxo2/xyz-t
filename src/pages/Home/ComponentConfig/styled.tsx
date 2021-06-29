@@ -17,7 +17,7 @@ export const ComponentConfigContainer = styled.div`
     }
   }
   .component-config-visible-btn {
-    display: ${(props: ComponentConfigProps) => props.visible ? 'block' : 'block'};
+    display: ${(props: ComponentConfigProps) => props.visible ? 'none' : 'none'};
   }
 `
 

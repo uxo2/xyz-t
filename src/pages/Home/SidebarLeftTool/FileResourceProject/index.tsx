@@ -1,8 +1,9 @@
-import { FileResourceProjectContainer, PageList, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList } from './styled'
+import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu"
-import { Collapse, Popover } from 'antd'
+import { Popover } from 'antd'
 import { useState } from 'react'
-import { SettingOutlined, EllipsisOutlined, CheckOutlined } from '@ant-design/icons'
+import { EllipsisOutlined, CheckOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
+import i18n from '../../../../utils/i18n'
 
 const onClick = () => {
   console.log(12)
@@ -27,31 +28,24 @@ const str = <FileResourceProjectContainer>
   </ContextMenu>
 </FileResourceProjectContainer>
 
-const genExtra = () => (
-  <SettingOutlined
-    onClick={event => {
-      event.stopPropagation()
-    }}
-  />
-)
-
 console.log(str)
 
 
 const FileResourceProject = () => {
   const [visiblePopover, setVisiblePopover] = useState(false)
+  const [resource, setResource] = useState({
+    visiblePageResource: false,
+    visibleStaticResouce: false
+  })
 
   const ResourceManagePopover = () => {
     return (
       <ResourceManagePopoverContainer>
-        {
-          
-        }
         <ResourceManageList onClick={() => {
           setVisiblePopover(false)
         }}>
           <CheckOutlined />
-          <div className="label">静态资源</div>
+          <div className="label">{i18n.t('common.staticResource')}</div>
         </ResourceManageList>
       </ResourceManagePopoverContainer>
     )
@@ -60,7 +54,7 @@ const FileResourceProject = () => {
   return (
     <FileResourceProjectContainer>
       <HeaderFileTitleBox className="header-file-title-box__popoverMountedNode">
-        <div className="title">资源管理器</div>
+        <div className="title">{i18n.t('common.resourceManage')}</div>
         <Popover
           placement="bottomLeft"
           content={ResourceManagePopover}
@@ -74,14 +68,32 @@ const FileResourceProject = () => {
           <EllipsisOutlined />
         </Popover>
       </HeaderFileTitleBox>
-      <Collapse expandIconPosition="left" className="collppse-container">
-        <Collapse.Panel header="页面配置" key="1" extra={genExtra()}>
-          <PageList>HomePage</PageList>
-        </Collapse.Panel>
-        <Collapse.Panel header="静态资源配置" key="2" extra={genExtra()}>
-          <div>12</div>
-        </Collapse.Panel>
-      </Collapse>
+      <SplitView>
+        <SplitViewHeader onClick={() => {
+          setResource({
+            ...resource,
+            visiblePageResource: !resource.visiblePageResource
+          })
+        }}>
+          <div className="resource-item-title">{i18n.t('common.workbar')}</div>
+          {resource.visiblePageResource ? <DownOutlined /> : <RightOutlined />}
+        </SplitViewHeader>
+        <SplitViewPane visible={resource.visiblePageResource}>
+
+        </SplitViewPane>
+        <SplitViewHeader onClick={() => {
+          setResource({
+            ...resource,
+            visibleStaticResouce: !resource.visibleStaticResouce
+          })
+        }}>
+          <div className="resource-item-title">{i18n.t('common.staticResource')}</div>
+          {resource.visibleStaticResouce ? <DownOutlined /> : <RightOutlined />}
+        </SplitViewHeader>
+        <SplitViewPane visible={resource.visibleStaticResouce}>
+
+        </SplitViewPane>
+      </SplitView>
     </FileResourceProjectContainer>
   )
 }

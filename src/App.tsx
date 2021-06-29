@@ -12,6 +12,7 @@ const AppDiv = styled.div`
   background: #0a101b;
   min-height: 600px;
   min-width: 1200px;
+  overflow: hidden;
 `
 
 const App = () => {
