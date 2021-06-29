@@ -1,4 +1,4 @@
-export default {
+const Ant_button = {
   // 工具栏配置
   group: '基础组件',
   tag: 'Button',
@@ -19,3 +19,5 @@ export default {
   icon: null,
   disabled: false
 }
+
+export default Ant_button

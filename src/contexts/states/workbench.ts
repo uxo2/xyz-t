@@ -1,4 +1,4 @@
-export const InitWorkbench:State.WorkbenchLoad = {
+export const InitWorkbench: State.WorkbenchLoad = {
   activeFile: null,
   openFileList: [],
   fileResourceManage: {

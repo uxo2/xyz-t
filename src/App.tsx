@@ -1,8 +1,8 @@
-import { AppContext } from './contexts/providers'
 import { useReducer } from 'react'
-import Routers from './routes'
 import 'antd/dist/antd.css'
 import styled, { ThemeProvider } from 'styled-components'
+import { AppContext } from './contexts/providers'
+import Routers from './routes'
 import initState from './contexts/states'
 import reducer from './contexts/reducer'
 
@@ -19,13 +19,17 @@ const App = () => {
   const [provider, dispatch] = useReducer(reducer, initState)
 
   return (
-    <AppContext.Provider value={{
-      state: provider,
-      dispatch
-    }}>
-      <ThemeProvider theme={{ mode: 'dark' }}>
+    <AppContext.Provider
+      value={{
+        state: provider,
+        dispatch,
+      }}>
+      <ThemeProvider
+        theme={{
+          mode: 'dark',
+        }}>
         <AppDiv>
-          <Routers></Routers>
+          <Routers />
         </AppDiv>
       </ThemeProvider>
     </AppContext.Provider>

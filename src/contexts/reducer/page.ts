@@ -31,7 +31,7 @@ export const pageReducer = (
           auxliaryCompName: payload.auxliaryCompName
         }
       }
-    
+
     default:
       return state
   }
