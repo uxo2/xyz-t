@@ -5,7 +5,11 @@ export const InitMetaView: State.MetaView = {
   visibleSidebarRightConfigBox: true,
   visibleHeaderBox: true,
   auxliaryCompName: '',
-  visibleInitPropsModal: true // init config modal
+  visibleInitPropsModal: true, // init config modal
+  fileResourceManage: {
+    visiblePageConfig: true,
+    visibleStaticResource: true
+  }
 }
 
 export default InitMetaView

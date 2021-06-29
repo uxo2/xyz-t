@@ -7,6 +7,7 @@ export const HomeHeaderBox = styled.header`
   justify-content: flex-start;
   align-items: center;
   background-color: #3c3c3c;
+  border-bottom: 1px solid #333f57;
   .logo-box {
     width: 100%;
     height: 100%;

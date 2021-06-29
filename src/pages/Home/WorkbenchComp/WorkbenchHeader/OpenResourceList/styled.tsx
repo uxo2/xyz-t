@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 interface OpenResourcesListProp {
   select?: boolean
+  empty?: boolean
 }
 
 export const OpenResourceItem = styled.li`
@@ -56,7 +57,7 @@ export const OpenResourceListContainer = styled.ul`
   margin: 0 45px;
   overflow: hidden;
   &:hover {
-    overflow: scroll hidden;
+    overflow: ${(props: OpenResourcesListProp) => props.empty ? 'hidden' : 'scroll hidden'};
     li {
       height: 40px;
       line-height: 40px;

@@ -27,16 +27,20 @@ export const IframeContainer = styled.div`
   width: 100%;
   box-sizing: border-box;
   background-color: #3c3c3c;
+  position: relative;
 `
 
 export const IframeBox = styled.div`
   background-image: url(${iframeBg});
   flex: 1;
   position: relative;
-  padding: 20px 40px 40px 20px;
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  right: 40px;
+  top: 20px;
+  bottom: 40px;
+  overflow: hidden;
 `
 
 export const FillCorner = styled.div`
@@ -80,6 +84,8 @@ export const IframeWorkbench = styled.iframe`
   border: none;
   margin: 0;
   padding: 0;
+  width: 1920px;
+  height: 1080px;
 `
 
 export const DividerWorkbenchVertical = styled.div`

@@ -4,6 +4,12 @@ export const Toolcontainer = styled.div`
   color: #fff;
   overflow: hidden;
 `
+export const Component = styled.div`
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+`
 
 export const ComponentBox = styled.div`
   display: flex;

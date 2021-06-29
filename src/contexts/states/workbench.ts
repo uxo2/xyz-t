@@ -1,8 +1,10 @@
 export const InitWorkbench:State.WorkbenchLoad = {
   activeFile: null,
-  openFileList: [
-
-  ]
+  openFileList: [],
+  fileResourceManage: {
+    pageListData: [],
+    staticResourceData: []
+  }
 }
 
 export default InitWorkbench

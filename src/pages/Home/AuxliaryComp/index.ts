@@ -1,7 +1,7 @@
 import OperationGuide from './OperationGuide'
 
 const AuxliaryComp = {
-  'operationGuide': OperationGuide
+  OperationGuide
 }
 
 export default AuxliaryComp

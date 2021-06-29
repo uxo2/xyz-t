@@ -22,7 +22,7 @@ const HomePage = () => {
         <SidebarleftIconList></SidebarleftIconList>
         <SideBarLeftToolComp></SideBarLeftToolComp>
         {
-          auxliaryCompName ? <AuxliaryComp.operationGuide /> : (
+          auxliaryCompName ? <AuxliaryComp.OperationGuide /> : (
             <>
               <WorkbenchComp></WorkbenchComp>
               <ComponentConfig></ComponentConfig>

@@ -38,7 +38,7 @@ const HomeHeaderBoxComp = () => {
                     placement="rightTop"
                     trigger="click"
                     color="#f2f4f5"
-                    getPopupContainer={() => document.querySelector('.menu-item') || document.body}
+                    getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
                   >
                     <div className={item.notify ? 'notify' : ''}>{item.label}</div>
                     <RightOutlined />
@@ -87,13 +87,13 @@ const HomeHeaderBoxComp = () => {
               placement="bottomLeft"
               color="#f2f4f5"
               overlayClassName="uxo-popover"
-              getPopupContainer={() => document.querySelector('.menu-item') || document.body}
+              getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
               trigger="click"
             >
               <Button disabled={file.disabled} className={file.notify ? 'notify' : ''}>{file.label}</Button>
             </Popover>
           } else {
-            children = <Button disabled key={index} className="menu-item">{file.label}</Button>
+            children = <Button disabled key={index} className="header-menu-item">{file.label}</Button>
           }
 
           return (
