@@ -1,3 +1,3 @@
 ## UI design
 
-I heat dialog.
+I hate dialog, popover, dwawer and hover style.
