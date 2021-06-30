@@ -17,15 +17,15 @@ const HomePage = () => {
 
   return (
     <HomePageContainer>
-      <HomeHeaderComp></HomeHeaderComp>
+      <HomeHeaderComp />
       <HomeMain>
-        <SidebarleftIconList></SidebarleftIconList>
-        <SideBarLeftToolComp></SideBarLeftToolComp>
+        <SidebarleftIconList />
+        <SideBarLeftToolComp />
         {
           auxliaryCompName ? <AuxliaryComp.OperationGuide /> : (
             <>
-              <WorkbenchComp></WorkbenchComp>
-              <ComponentConfig></ComponentConfig>
+              <WorkbenchComp />
+              <ComponentConfig />
             </>
           )
         }

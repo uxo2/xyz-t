@@ -17,8 +17,8 @@ export const HomeHeaderBox = styled.header`
 `
 
 interface ButtonPropsAttrs {
-  disabled?: Boolean
-  divider?: Boolean
+  disabled?: boolean
+  divider?: boolean
 }
 export const Button = styled.div`
   display: inline-block;
@@ -97,4 +97,8 @@ export const PopoverDivider = styled.div`
   height: 1px;
   background: #d9d9d9;
   margin: 2px 0;
+`
+
+export const NotityLabel = styled.div`
+  width: 100%;
 `

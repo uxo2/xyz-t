@@ -21,7 +21,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "typeRoots": [ // 要包含的类型声明文件路径列表
-      "src/types",
+      "./src/types",
       "node_modules/@types"
     ],
     "preserveConstEnums": true, // 保留 const和 enum声明。

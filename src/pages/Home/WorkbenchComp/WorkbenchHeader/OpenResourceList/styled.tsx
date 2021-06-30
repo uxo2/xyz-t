@@ -26,22 +26,6 @@ export const OpenResourceItem = styled.li`
       visibility: visible;
     }
   }
-  .close-btn {
-    visibility: hidden;
-    padding: 3px;
-    border-radius: 3px;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0px;
-    transform: scale(0.95);
-    &:hover {
-      background-color: #3c3c3c;
-      color: #fff;
-    }
-  }
 `
 
 export const OpenResourceListContainer = styled.ul`
@@ -78,5 +62,25 @@ export const OpenResourceListContainer = styled.ul`
     width: 100%;
     user-select: none;
     text-align: center;
+  }
+`
+export const ResourceItemTitle = styled.div`
+  width: 100%;
+`
+
+export const ResourceItemCloseBtn = styled.div`
+  visibility: hidden;
+  padding: 3px;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0px;
+  transform: scale(0.95);
+  &:hover {
+    background-color: #3c3c3c;
+    color: #fff;
   }
 `

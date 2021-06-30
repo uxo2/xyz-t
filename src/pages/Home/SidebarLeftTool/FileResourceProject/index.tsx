@@ -1,33 +1,44 @@
-import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu"
 import { Popover } from 'antd'
 import { useState } from 'react'
 import { EllipsisOutlined, CheckOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
+import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import i18n from '../../../../utils/i18n'
 
 const onClick = () => {
   console.log(12)
 }
 
-const str = <FileResourceProjectContainer>
-  <ContextMenuTrigger id="contextFileResource">
-    <div className="well">Right click to see the menu</div>
-  </ContextMenuTrigger>
+const str = (
+  <FileResourceProjectContainer>
+    <ContextMenuTrigger id="contextFileResource">
+      <div className="well">Right click to see the menu</div>
+    </ContextMenuTrigger>
 
-  <ContextMenu id="contextFileResource">
-    <MenuItem data={{ foo: 'bar' }} onClick={onClick}>
-      ContextMenu Item 1
-    </MenuItem>
-    <MenuItem data={{ foo: 'bar' }} onClick={onClick}>
-      ContextMenu Item 2
-    </MenuItem>
-    <MenuItem divider />
-    <MenuItem data={{ foo: 'bar' }} onClick={onClick}>
-      ContextMenu Item 3
-    </MenuItem>
-  </ContextMenu>
-</FileResourceProjectContainer>
-
+    <ContextMenu id="contextFileResource">
+      <MenuItem
+        data={{
+          foo: 'bar'
+        }}
+        onClick={onClick}>
+        ContextMenu Item 1
+      </MenuItem>
+      <MenuItem data={{
+        foo: 'bar'
+      }}
+        onClick={onClick}>
+        ContextMenu Item 2
+      </MenuItem>
+      <MenuItem divider />
+      <MenuItem data={{
+        foo: 'bar'
+      }}
+        onClick={onClick}>
+        ContextMenu Item 3
+      </MenuItem>
+    </ContextMenu>
+  </FileResourceProjectContainer>
+)
 console.log(str)
 
 
@@ -62,7 +73,9 @@ const FileResourceProject = () => {
           visible={visiblePopover}
           onVisibleChange={visible => { setVisiblePopover(visible) }}
           overlayClassName="resource-manage-popover"
-          overlayStyle={{ padding: 0 }}
+          overlayStyle={{
+            padding: 0
+          }}
           getPopupContainer={() => document.querySelector('.header-file-title-box__popoverMountedNode') || document.body}
         >
           <EllipsisOutlined />
@@ -79,7 +92,7 @@ const FileResourceProject = () => {
           {resource.visiblePageResource ? <DownOutlined /> : <RightOutlined />}
         </SplitViewHeader>
         <SplitViewPane visible={resource.visiblePageResource}>
-
+          12
         </SplitViewPane>
         <SplitViewHeader onClick={() => {
           setResource({
@@ -91,7 +104,7 @@ const FileResourceProject = () => {
           {resource.visibleStaticResouce ? <DownOutlined /> : <RightOutlined />}
         </SplitViewHeader>
         <SplitViewPane visible={resource.visibleStaticResouce}>
-
+          14
         </SplitViewPane>
       </SplitView>
     </FileResourceProjectContainer>

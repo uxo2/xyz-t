@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface SidebarLeftToolProps {
-  visible?: Boolean
+  visible?: boolean
 }
 
 export const SidebarLeftTool = styled.div`
@@ -13,3 +13,5 @@ export const SidebarLeftTool = styled.div`
   background-color: #252526;
   color: var(--theme-color);
 `
+
+export default SidebarLeftTool

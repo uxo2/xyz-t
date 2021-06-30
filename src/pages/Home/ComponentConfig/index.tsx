@@ -1,8 +1,7 @@
-import { ComponentConfigContainer, ComponentConfigClose } from './styled'
 import { RightOutlined, LeftOutlined } from '@ant-design/icons'
+import { ComponentConfigContainer, ComponentConfigClose } from './styled'
 import { useAppState, useDispatch } from '../../../contexts/providers'
-import { PageActions } from '../.././../contexts/actions'
-
+import { PageActions } from '../../../contexts/actions'
 
 const ComponentConfig = () => {
   const {

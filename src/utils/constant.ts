@@ -5,19 +5,57 @@ import SearchModel from '../pages/Home/SidebarLeftTool/SearchModel'
 import DebugModel from '../pages/Home/SidebarLeftTool/DebugModel'
 import ExtendTool from '../pages/Home/SidebarLeftTool/ExtendTool'
 
-export const SIDEBAR_LEFT_ICONS = []
-
 export const SIDEBAR_ICONS_LIST = {
   header: [
-    { title: i18n.t('common.resourceManage'), value: 'resourceManager', icon: 'iconwenjianjia1 iconfont', Comp: FileResourceProject, size: 26 },
-    { title: i18n.t('common.holdAll'), value: 'tools', icon: 'iconfont iconshujuzhongjian', Comp: ComponentContainer, size: 24 },
-    { title: i18n.t('common.search'), value: 'search', icon: 'iconsearch iconfont', Comp: SearchModel, size: 24 },
-    { title: i18n.t('common.debug'), value: 'debugAndRun', icon: 'iconrun1 iconfont', Comp: DebugModel, size: 26 },
-    { title: i18n.t('common.extend'), value: 'extend', icon: 'iconkuaixuanzhong iconfont', Comp: ExtendTool, size: 26 }
+    {
+      title: i18n.t('common.resourceManage'),
+      value: 'resourceManager',
+      icon: 'iconwenjianjia1 iconfont',
+      Comp: FileResourceProject,
+      size: 26
+    },
+    {
+      title: i18n.t('common.holdAll'),
+      value: 'tools',
+      icon: 'iconfont iconshujuzhongjian',
+      Comp: ComponentContainer,
+      size: 24
+    },
+    {
+      title: i18n.t('common.search'),
+      value: 'search',
+      icon: 'iconsearch iconfont',
+      Comp: SearchModel,
+      size: 24
+    },
+    {
+      title: i18n.t('common.debug'),
+      value: 'debugAndRun',
+      icon: 'iconrun1 iconfont',
+      Comp: DebugModel,
+      size: 26
+    },
+    {
+      title: i18n.t('common.extend'),
+      value: 'extend',
+      icon: 'iconkuaixuanzhong iconfont',
+      Comp: ExtendTool,
+      size: 26
+    }
   ],
   footer: [
-    { title: i18n.t('common.counter'), value: 'counter', icon: 'iconfenxiang iconfont', size: 26 },
-    { title: i18n.t('common.setting'), value: 'manage', icon: 'iconsetting iconfont', size: 24 }
+    {
+      title: i18n.t('common.counter'),
+      value: 'counter',
+      icon: 'iconfenxiang iconfont',
+      size: 26
+    },
+    {
+      title: i18n.t('common.setting'),
+      value: 'manage',
+      icon: 'iconsetting iconfont',
+      size: 24
+    }
   ]
 }
 

@@ -1,5 +1,5 @@
-import { OpenResourceListContainer, OpenResourceItem } from './styled'
 import { CloseOutlined } from '@ant-design/icons'
+import { OpenResourceListContainer, OpenResourceItem, ResourceItemTitle, ResourceItemCloseBtn } from './styled'
 import { useAppState, useDispatch } from '../../../../../contexts/providers'
 import { ComponentActions } from '../../../../../contexts/actions'
 import i18n from '../../../../../utils/i18n'
@@ -13,10 +13,10 @@ const OpenResourceList = () => {
   return (
     <OpenResourceListContainer empty={openFileList.length === 0}>
       {
-        openFileList.length ? openFileList.map((item, index) => (
-          <OpenResourceItem key={index} select={activeFile?.id === item.id}>
-            <div className="text">{item.title}</div>
-            <div className="close-btn" onClick={() => {
+        openFileList.length ? openFileList.map(item => (
+          <OpenResourceItem select={activeFile?.id === item.id}>
+            <ResourceItemTitle>{item.title}</ResourceItemTitle>
+            <ResourceItemCloseBtn className="close-btn" onClick={() => {
               dispatch({
                 type: ComponentActions.UpdateActiveFile,
                 payload: {
@@ -26,7 +26,7 @@ const OpenResourceList = () => {
               })
             }}>
               <CloseOutlined />
-            </div>
+            </ResourceItemCloseBtn>
           </OpenResourceItem>
         )) : <div className="empty-info">{i18n.t('common.emptyFile')}</div>
       }

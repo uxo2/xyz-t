@@ -16,9 +16,8 @@ const SidebarLeft = () => {
     <SidebarContainer>
       <SidebarleftIconList>
         {
-          SIDEBAR_ICONS_LIST.header.map((item, index) => (
+          SIDEBAR_ICONS_LIST.header.map(item => (
             <SideBarIconLi
-              key={index}
               title={item.title}
               selected={item.value === selectedSideBarLeftIconLabel && visibleSideBarLeftTool}
               onClick={() => {
@@ -31,19 +30,16 @@ const SidebarLeft = () => {
                 })
               }}
             >
-              <i className={item.icon}></i>
+              <i className={item.icon} />
             </SideBarIconLi>
           ))
         }
       </SidebarleftIconList>
       <SidebarFooterList>
         {
-          SIDEBAR_ICONS_LIST.footer.map((item, index) => (
-            <li
-              key={index}
-              title={item.title}
-            >
-              <i className={item.icon}></i>
+          SIDEBAR_ICONS_LIST.footer.map(item => (
+            <li title={item.title}>
+              <i className={item.icon} />
             </li>
           ))
         }

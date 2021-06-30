@@ -7,10 +7,16 @@ const reducer = (
   { type, payload }: { type: StateActions; payload: any }
 ): State.AppState => {
   if (Object.values(AppActions).includes(type as AppActions)) {
-    return appReducer(state, { type: type as AppActions, payload })
-  } else {
-    return pageReducer(state, { type: type as PageActions, payload })
+    return appReducer(state, {
+      type: type as AppActions,
+      payload
+    })
   }
+
+  return pageReducer(state, {
+    type: type as PageActions,
+    payload
+  })
 }
 
 export default reducer

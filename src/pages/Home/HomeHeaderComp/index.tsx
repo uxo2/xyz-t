@@ -1,16 +1,13 @@
-import React from 'react'
-import { useHistory } from 'react-router'
 import { Image, Popover } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
-import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox } from './styled'
+import { HomeHeaderBox, Button, PopoverContentItem, PopoverDivider, PopoverContentBox, NotityLabel } from './styled'
 import { HEADER_DIR } from '../../../utils/constant'
 import { useAppState, useDispatch } from '../../../contexts/providers'
-import { AppActions, PageActions } from '../.././../contexts/actions'
+import { AppActions, PageActions } from '../../../contexts/actions'
 import logo from '../../../assets/images/logo.svg'
 
-const HomeHeaderBoxComp = () => {
+const HomeHeaderBoxComp = (): React.ReactElement => {
   const dispatch = useDispatch()
-  const history = useHistory()
   const {
     metaView: { visibleHeaderBox }
   } = useAppState()
@@ -25,41 +22,46 @@ const HomeHeaderBoxComp = () => {
     }
   }
 
-  const CodeContentDOM = (file: Array<Meta.FileDir>) => (
-    <PopoverContentBox>
-      {
-        file.map((item, index) =>
-          <React.Fragment key={index}>
-            <PopoverContentItem>
-              {
-                item.children ?
-                  <Popover
-                    content={(CodeContentDOM(item.children || []))}
-                    placement="rightTop"
-                    trigger="click"
-                    color="#f2f4f5"
-                    getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
-                  >
-                    <div className={item.notify ? 'notify' : ''}>{item.label}</div>
-                    <RightOutlined />
-                  </Popover>
-                  :
-                  <div
-                    className={item.notify ? 'notify' : ''}
-                    onClick={() => {
-                      handleClickPopoverLabel(item.value);
-                    }}
-                  >
-                    {item.label}
-                  </div>
-              }
-            </PopoverContentItem>
-            {item.divider ? <PopoverDivider></PopoverDivider> : ''}
-          </React.Fragment>
-        )
-      }
-    </PopoverContentBox>
-  )
+  const CodeContentDOM = (file: Array<Meta.FileDir>): React.ReactElement => {
+    const [...codeContent] = file
+
+    return (
+      <PopoverContentBox>
+        {
+          codeContent.map(item => {
+            return (
+              <>
+                <PopoverContentItem>
+                  {
+                    item.children ?
+                      <Popover
+                        content={(CodeContentDOM(item.children || []))}
+                        placement="rightTop"
+                        trigger="click"
+                        color="#f2f4f5"
+                        getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
+                      >
+                        <div className={item.notify ? 'notify' : ''}>{item.label}</div>
+                        <RightOutlined />
+                      </Popover>
+                      : <NotityLabel
+                        className={item.notify ? 'notify' : ''}
+                        onClick={() => {
+                          handleClickPopoverLabel(item.value)
+                        }}
+                      >
+                        {item.label}
+                      </NotityLabel>
+                  }
+                </PopoverContentItem>
+                {item.divider ? <PopoverDivider /> : ''}
+              </>
+            )
+          })
+        }
+      </PopoverContentBox>
+    )
+  }
 
   return (
     visibleHeaderBox ? <HomeHeaderBox id="headerRef">
@@ -69,42 +71,41 @@ const HomeHeaderBoxComp = () => {
         height={35}
         preview={false}
         onClick={() => {
-          history.push(`/`)
           dispatch({
             type: AppActions.BackHomePage,
-            payload: {}
+            payload: {
+
+            }
           })
         }}
         src={logo}
       />
       {
-        HEADER_DIR.map((file, index) => {
-          let children: any
+        HEADER_DIR.map(file => {
+          let children: React.ReactElement
 
           if (file.children && !file.disabled) {
-            children = <Popover
-              content={(CodeContentDOM(file.children || []))}
-              placement="bottomLeft"
-              color="#f2f4f5"
-              overlayClassName="uxo-popover"
-              getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
-              trigger="click"
-            >
-              <Button disabled={file.disabled} className={file.notify ? 'notify' : ''}>{file.label}</Button>
-            </Popover>
+            children = (
+              <Popover
+                content={(CodeContentDOM(file.children || []))}
+                placement="bottomLeft"
+                color="#f2f4f5"
+                overlayClassName="uxo-popover"
+                getPopupContainer={() => document.querySelector('.header-menu-item') || document.body}
+                trigger="click"
+              >
+                <Button disabled={file.disabled} className={file.notify ? 'notify' : ''}>{file.label}</Button>
+              </Popover>
+            )
           } else {
-            children = <Button disabled key={index} className="header-menu-item">{file.label}</Button>
+            children = <Button disabled className="header-menu-item">{file.label}</Button>
           }
 
-          return (
-            <React.Fragment key={index}>
-              {children}
-            </React.Fragment>
-          )
+          return children
         })
       }
     </HomeHeaderBox>
-      : <div></div>
+      : <div />
   )
 }
 

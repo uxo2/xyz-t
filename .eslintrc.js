@@ -1,5 +1,15 @@
 module.exports = {
-  extends: ['airbnb', 'plugin:prettier/recommended'],
+  extends: [
+    'airbnb',
+    'plugin:prettier/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react-hooks'],
   rules: {
@@ -15,7 +25,10 @@ module.exports = {
         "comma-dangle": ["error", "never"]
       }
     ],
+    semi: [2, 'never'],
+    "react/jsx-uses-react": "off",
     "comma-dangle": ["error", "never"],
+    "@typescript-eslint/explicit-module-boundary-types": ["off"],
     'import/no-extraneous-dependencies': [
       2,
       {
@@ -34,7 +47,6 @@ module.exports = {
         "allowObject": true
       }
     ],
-    'no-unused-vars': 'off',
     'implicit-arrow-linebreak': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -97,6 +109,7 @@ module.exports = {
         exceptions: [''],
       },
     ],
+    "import/prefer-default-export": "off",
     'react/require-default-props': [0],
     'no-shadow': 'off',
     'react/prop-types': [0],
@@ -106,7 +119,7 @@ module.exports = {
         prop: 'ignore',
       },
     ],
-    'no-console': ['error', { allow: ['error'] }],
+    'no-console': [0],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     camelcase: [
@@ -122,6 +135,7 @@ module.exports = {
     jest: true,
     browser: true,
     node: true,
+    es6: true,
   },
   settings: {
     react: {
@@ -133,5 +147,5 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
-  },
+  }
 }

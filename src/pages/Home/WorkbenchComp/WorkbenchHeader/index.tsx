@@ -1,7 +1,7 @@
+import { Slider, message } from 'antd'
 import { StepBackwardOutlined, StepForwardOutlined, ClearOutlined, CompressOutlined, EyeOutlined } from '@ant-design/icons'
 import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
 import OpenResourceList from './OpenResourceList'
-import { Slider, message } from 'antd'
 import i18n from '../../../../utils/i18n'
 
 const WorkbenchHeader = () => (

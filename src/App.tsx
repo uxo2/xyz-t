@@ -22,11 +22,11 @@ const App = () => {
     <AppContext.Provider
       value={{
         state: provider,
-        dispatch,
+        dispatch
       }}>
       <ThemeProvider
         theme={{
-          mode: 'dark',
+          mode: 'dark'
         }}>
         <AppDiv>
           <Routers />

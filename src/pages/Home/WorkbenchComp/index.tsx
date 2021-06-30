@@ -5,20 +5,20 @@ import WorkbenchHeader from './WorkbenchHeader'
 import { WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal, IframeContainer, IframeBox, IframeWorkbench, ScrollRight, ScrollBottom, FillCorner } from './styled'
 
 export const WorkbenchComp = () => {
-  const dividerDom = Array(100).fill(100).map((val, index) => <span className="number" key={index}>{index * val / 2}</span>)
+  const dividerDom = Array(100).fill(100).map((val, index) => <span className="number">{index * val / 2}</span>)
   return (
     <WorkbenchBox>
       {/* <Route path="/component-docs/elementPlus" component={ElementPlus} exact></Route>
     <Route path="/component-docs/antDesign" component={AntDesign} exact></Route> */}
-      <WorkbenchHeader></WorkbenchHeader>
+      <WorkbenchHeader />
       <IframeContainer>
         <IframeBox>
-          <IframeWorkbench src=""></IframeWorkbench>
+          <IframeWorkbench src="" />
         </IframeBox>
-        <FillCorner className="top-left"></FillCorner>
-        <FillCorner className="top-right"></FillCorner>
-        <FillCorner className="bottom-left"></FillCorner>
-        <FillCorner className="bottom-right"></FillCorner>
+        <FillCorner className="top-left" />
+        <FillCorner className="top-right" />
+        <FillCorner className="bottom-left" />
+        <FillCorner className="bottom-right" />
         <DividerWorkbenchVertical className="left-divider">
           {dividerDom}
         </DividerWorkbenchVertical>
@@ -31,8 +31,8 @@ export const WorkbenchComp = () => {
         <DividerWorkbenchHorizontal className="bottom-divider">
           {dividerDom}
         </DividerWorkbenchHorizontal>
-        <ScrollRight></ScrollRight>
-        <ScrollBottom></ScrollBottom>
+        <ScrollRight />
+        <ScrollBottom />
       </IframeContainer>
     </WorkbenchBox>
   )
