@@ -3,11 +3,6 @@ import iframeBg from '../../../assets/images/iframeBG.png'
 import divider1 from '../../../assets/images/divider1.png'
 import divider2 from '../../../assets/images/divider2.png'
 
-interface WorkbenchCompIframeViewProps {
-  width?: number
-  height?: number
-}
-
 export const WorkbenchBox = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -38,9 +33,9 @@ export const IframeContainer = styled.div`
 export const IframeBox = styled.div`
   position: absolute;
   left: 20px;
-  right: 40px;
+  right: -20px;
   top: 20px;
-  bottom: 40px;
+  bottom: -20px;
   padding: 20px;
   overflow: hidden;
   background-image: url(${iframeBg});
@@ -51,7 +46,33 @@ export const IframeBox = styled.div`
 export const IframeContent = styled.div`
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
+  ::-webkit-scrollbar {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    margin: 0 auto;
+    background-color: #333e55;
+    border-radius: 0;
+  }
+  ::-webkit-resizer {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
 `
 
 export const FillCorner = styled.div`
@@ -60,30 +81,11 @@ export const FillCorner = styled.div`
   height: 20px;
   background-color: #111825;
   z-index: 1;
-  
   &.top-left {
     left: 0;
     top: 0;
     border-top: solid 1px #333f57;
     border-left: solid 1px #333f57;
-  }
-  &.top-right {
-    right: 20px;
-    top: 0;
-    border-top: solid 1px #333f57;
-    border-right: solid 1px #333f57;
-  }
-  &.bottom-left {
-    bottom: 20px;
-    left: 0;
-    border-bottom: solid 1px #333f57;
-    border-left: solid 1px #333f57;
-  }
-  &.bottom-right {
-    bottom: 20px;
-    right: 20px;
-    border-bottom: solid 1px #333f57;
-    border-right: solid 1px #333f57;
   }
 `
 
@@ -102,7 +104,7 @@ export const IframeWorkbench = styled.iframe`
 export const DividerWorkbenchVertical = styled.div`
   position: absolute;
   top: 20px;
-  bottom: 40px;
+  bottom: 0;
   width: 20px;
   background-image: url(${divider2});
   background-repeat: repeat-y;
@@ -130,7 +132,7 @@ export const DividerWorkbenchVertical = styled.div`
 export const DividerWorkbenchHorizontal = styled.div`
   position: absolute;
   left: 20px;
-  right: 40px;
+  right: 0;
   height: 20px;
   background-position-x: 20px;
   background-image: url(${divider1});
@@ -155,40 +157,4 @@ export const DividerWorkbenchHorizontal = styled.div`
     display: inline-block;
     user-select: none;
   }
-`
-
-export const ScrollRight = styled.div`
-  position: absolute;
-  right: 0;
-  width: 20px;
-  bottom: 40px;
-  top: 40px;
-  background-color: #1e1e1e;
-`
-
-export const ScrollBottom = styled.div`
-  position: absolute;
-  right: 40px;
-  height: 20px;
-  bottom: 0;
-  left: 40px;
-  background-color: #1e1e1e;
-`
-
-export const ScrollBlockHorizontal = styled.div`
-  width: ${({ width }: WorkbenchCompIframeViewProps) => width}px;
-  height: 20px;
-  background-color: #096dd9;
-  position: relative;
-  top: 0;
-  cursor: pointer;
-`
-
-export const ScrollBlockRight = styled.div`
-  width: 20px;
-  height: ${({ height }: WorkbenchCompIframeViewProps) => height}px;
-  background-color: #096dd9;
-  position: relative;
-  top: 0;
-  cursor: pointer;
 `

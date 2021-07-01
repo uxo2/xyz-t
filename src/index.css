@@ -81,12 +81,10 @@ ul {
 
 ::-webkit-scrollbar {
   width: 6px;
-  border-radius: 10px;
 }
  
 ::-webkit-scrollbar-thumb {
   background: #bfbfbf;
-  border-radius: 10px;
 }
 
 .custom-wrap-classname__modal .ant-modal-header {

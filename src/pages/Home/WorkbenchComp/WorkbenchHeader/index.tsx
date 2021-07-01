@@ -3,8 +3,8 @@ import {
   message
 } from 'antd'
 import {
-  RightOutlined,
-  LeftOutlined,
+  DoubleRightOutlined,
+  DoubleLeftOutlined,
   StepBackwardOutlined,
   StepForwardOutlined,
   ClearOutlined,
@@ -44,7 +44,7 @@ const ComponentConfig = () => {
         })
       }}
     >
-      {visibleSidebarRightConfigBox ? <RightOutlined /> : <LeftOutlined />}
+      {visibleSidebarRightConfigBox ? <DoubleRightOutlined /> : <DoubleLeftOutlined />}
     </Button>
   )
 }

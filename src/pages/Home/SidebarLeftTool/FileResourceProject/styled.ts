@@ -99,7 +99,6 @@ export const ResourceManagePopoverContainer = styled.div`
   padding: 5px;
   box-sizing: border-box;
   margin: 0;
-  width: 100px;
 `
 
 export const ResourceManageList = styled.div`
