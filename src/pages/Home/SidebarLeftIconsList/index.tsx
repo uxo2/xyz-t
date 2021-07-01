@@ -19,6 +19,7 @@ const SidebarLeft = () => {
           SIDEBAR_ICONS_LIST.header.map(item => (
             <SideBarIconLi
               title={item.title}
+              key={item.value}
               selected={item.value === selectedSideBarLeftIconLabel && visibleSideBarLeftTool}
               onClick={() => {
                 dispatch({
@@ -38,7 +39,10 @@ const SidebarLeft = () => {
       <SidebarFooterList>
         {
           SIDEBAR_ICONS_LIST.footer.map(item => (
-            <li title={item.title}>
+            <li
+              title={item.title}
+              key={item.value}
+            >
               <i className={item.icon} />
             </li>
           ))

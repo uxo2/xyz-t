@@ -38,7 +38,7 @@ export const OpenResourceListContainer = styled.ul`
   padding: 0;
   color: #fff;
   background: #9e94943d;
-  margin: 0 45px;
+  margin: 0;
   overflow: hidden;
   &:hover {
     overflow: ${(props: OpenResourcesListProp) => props.empty ? 'hidden' : 'scroll hidden'};

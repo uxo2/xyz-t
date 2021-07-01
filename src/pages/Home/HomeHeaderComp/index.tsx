@@ -30,7 +30,7 @@ const HomeHeaderBoxComp = (): React.ReactElement => {
         {
           codeContent.map(item => {
             return (
-              <>
+              <main key={item.label}>
                 <PopoverContentItem>
                   {
                     item.children ?
@@ -55,7 +55,7 @@ const HomeHeaderBoxComp = (): React.ReactElement => {
                   }
                 </PopoverContentItem>
                 {item.divider ? <PopoverDivider /> : ''}
-              </>
+              </main>
             )
           })
         }
@@ -82,10 +82,10 @@ const HomeHeaderBoxComp = (): React.ReactElement => {
       />
       {
         HEADER_DIR.map(file => {
-          let children: React.ReactElement
+          let Children: React.FC
 
           if (file.children && !file.disabled) {
-            children = (
+            Children = () => (
               <Popover
                 content={(CodeContentDOM(file.children || []))}
                 placement="bottomLeft"
@@ -98,10 +98,10 @@ const HomeHeaderBoxComp = (): React.ReactElement => {
               </Popover>
             )
           } else {
-            children = <Button disabled className="header-menu-item">{file.label}</Button>
+            Children = () => <Button disabled className="header-menu-item">{file.label}</Button>
           }
 
-          return children
+          return <Children key={file.label} />
         })
       }
     </HomeHeaderBox>

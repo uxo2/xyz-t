@@ -7,7 +7,7 @@ export const ComponentContainer = () => {
       {
         AntdComponent.map(item => {
           return (
-            <Component draggable="true">{item.label}</Component>
+            <Component draggable="true" key={item.label}>{item.label}</Component>
           )
         })
       }

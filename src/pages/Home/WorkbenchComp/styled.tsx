@@ -3,6 +3,11 @@ import iframeBg from '../../../assets/images/iframeBG.png'
 import divider1 from '../../../assets/images/divider1.png'
 import divider2 from '../../../assets/images/divider2.png'
 
+interface WorkbenchCompIframeViewProps {
+  width?: number
+  height?: number
+}
+
 export const WorkbenchBox = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -31,15 +36,21 @@ export const IframeContainer = styled.div`
 `
 
 export const IframeBox = styled.div`
-  background-image: url(${iframeBg});
-  flex: 1;
-  position: relative;
-  box-sizing: border-box;
   position: absolute;
   left: 20px;
   right: 40px;
   top: 20px;
   bottom: 40px;
+  padding: 20px;
+  overflow: hidden;
+  background-image: url(${iframeBg});
+  flex: 1;
+  box-sizing: border-box;
+`
+
+export const IframeContent = styled.div`
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 `
 
@@ -162,4 +173,22 @@ export const ScrollBottom = styled.div`
   bottom: 0;
   left: 40px;
   background-color: #1e1e1e;
+`
+
+export const ScrollBlockHorizontal = styled.div`
+  width: ${({ width }: WorkbenchCompIframeViewProps) => width}px;
+  height: 20px;
+  background-color: #096dd9;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+`
+
+export const ScrollBlockRight = styled.div`
+  width: 20px;
+  height: ${({ height }: WorkbenchCompIframeViewProps) => height}px;
+  background-color: #096dd9;
+  position: relative;
+  top: 0;
+  cursor: pointer;
 `

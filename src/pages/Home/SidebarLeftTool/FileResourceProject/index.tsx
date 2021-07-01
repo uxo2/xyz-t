@@ -46,7 +46,8 @@ const FileResourceProject = () => {
   const [visiblePopover, setVisiblePopover] = useState(false)
   const [resource, setResource] = useState({
     visiblePageResource: false,
-    visibleStaticResouce: false
+    visibleStaticResouce: false,
+    visibleComponentTree: false
   })
 
   const ResourceManagePopover = () => {
@@ -56,7 +57,19 @@ const FileResourceProject = () => {
           setVisiblePopover(false)
         }}>
           <CheckOutlined />
+          <div className="label">{i18n.t('common.workbar')}</div>
+        </ResourceManageList>
+        <ResourceManageList onClick={() => {
+          setVisiblePopover(false)
+        }}>
+          <CheckOutlined />
           <div className="label">{i18n.t('common.staticResource')}</div>
+        </ResourceManageList>
+        <ResourceManageList onClick={() => {
+          setVisiblePopover(false)
+        }}>
+          <CheckOutlined />
+          <div className="label">{i18n.t('common.componentTree')}</div>
         </ResourceManageList>
       </ResourceManagePopoverContainer>
     )
@@ -104,6 +117,18 @@ const FileResourceProject = () => {
           {resource.visibleStaticResouce ? <DownOutlined /> : <RightOutlined />}
         </SplitViewHeader>
         <SplitViewPane visible={resource.visibleStaticResouce}>
+          14
+        </SplitViewPane>
+        <SplitViewHeader onClick={() => {
+          setResource({
+            ...resource,
+            visibleComponentTree: !resource.visibleComponentTree
+          })
+        }}>
+          <div className="resource-item-title">{i18n.t('common.componentTree')}</div>
+          {resource.visibleComponentTree ? <DownOutlined /> : <RightOutlined />}
+        </SplitViewHeader>
+        <SplitViewPane visible={resource.visibleComponentTree}>
           14
         </SplitViewPane>
       </SplitView>

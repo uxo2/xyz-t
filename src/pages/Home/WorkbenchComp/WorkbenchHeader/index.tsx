@@ -1,8 +1,53 @@
-import { Slider, message } from 'antd'
-import { StepBackwardOutlined, StepForwardOutlined, ClearOutlined, CompressOutlined, EyeOutlined } from '@ant-design/icons'
-import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
+import {
+  Slider,
+  message
+} from 'antd'
+import {
+  RightOutlined,
+  LeftOutlined,
+  StepBackwardOutlined,
+  StepForwardOutlined,
+  ClearOutlined,
+  CompressOutlined,
+  EyeOutlined
+} from '@ant-design/icons'
+import {
+  ToolBtnComp,
+  WorkbenchHeaderContainer,
+  ToolBtnRightComp,
+  Button
+} from './styled'
 import OpenResourceList from './OpenResourceList'
 import i18n from '../../../../utils/i18n'
+import {
+  useAppState,
+  useDispatch
+} from '../../../../contexts/providers'
+import { PageActions } from '../../../../contexts/actions'
+
+const ComponentConfig = () => {
+  const {
+    metaView: {
+      visibleSidebarRightConfigBox
+    }
+  } = useAppState()
+  const dispatch = useDispatch()
+
+  return (
+    <Button
+      onClick={() => {
+        dispatch({
+          type: PageActions.VisibleRightConfigComp,
+          payload: {
+            visibleSidebarRightConfigBox: !visibleSidebarRightConfigBox
+          }
+        })
+      }}
+    >
+      {visibleSidebarRightConfigBox ? <RightOutlined /> : <LeftOutlined />}
+    </Button>
+  )
+}
 
 const WorkbenchHeader = () => (
   <WorkbenchHeaderContainer>
@@ -40,6 +85,7 @@ const WorkbenchHeader = () => (
         max={200}
         tipFormatter={value => `${value} %`}
       />
+      <ComponentConfig />
     </ToolBtnRightComp>
   </WorkbenchHeaderContainer>
 )
