@@ -29,6 +29,12 @@
     },
     "toast": {
       "unfinish": "暂未完成，尽请期待。。。"
+    },
+    "baseMaterial": {
+      "element": {
+        "group": "按钮控件",
+        "label": "按钮"
+      }
     }
   }
 }

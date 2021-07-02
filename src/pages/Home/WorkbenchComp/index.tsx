@@ -1,14 +1,11 @@
 import { useRef, useEffect } from 'react'
 import { uid } from 'react-uid'
+import IframeEvt from '../../../shell/eventDrag'
+
 import WorkbenchHeader from './WorkbenchHeader'
 import {
-  WorkbenchBox,
-  DividerWorkbenchVertical,
-  DividerWorkbenchHorizontal,
-  IframeContainer,
-  IframeBox, IframeContent,
-  IframeWorkbench,
-  FillCorner
+  WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal,
+  IframeContainer, IframeBox, IframeContent, IframeWorkbench, FillCorner
 } from './styled'
 
 const DividerContainer = () => {
@@ -35,7 +32,7 @@ const DividerContainer = () => {
   )
 }
 
-const getIframe = () => document.getElementById('dnd-iframe') as HTMLIFrameElement
+const getIframe = () => document.getElementById('workbenchIframeRef') as HTMLIFrameElement
 
 export const WorkbenchComp = () => {
   const iframeRef = useRef<HTMLIFrameElement>()
@@ -43,22 +40,47 @@ export const WorkbenchComp = () => {
   useEffect(() => {
     iframeRef.current = getIframe()
 
-    const iframeContent = iframeRef.current.contentWindow!
+    const iframeContent = iframeRef.current.contentWindow as Window
+    const iframedemo = new IframeEvt('sd', iframeContent)
 
-    iframeContent.addEventListener('dragover', onDragover)
-    
-
-    return () => {
-
-    }
+    console.log(iframedemo)
   })
+
+  const iframeSrcDoc = ` <style>
+  .droptarget {
+      position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;width: 100%;height: 100%;
+  }
+  </style>
+  <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <script>
+  function allowDrop(event) {
+      event.preventDefault();
+  }
+  function drop(event) {
+    event.preventDefault();
+    console.log('drop')
+    let a = event.dataTransfer.getData("Text")
+    console.log(JSON.parse(JSON.parse(a)).group)
+  }
+  </script>`
+
   return (
     <WorkbenchBox>
       <WorkbenchHeader />
       <IframeContainer>
         <IframeBox>
           <IframeContent>
-            <IframeWorkbench src="" srcDoc={iframeData} />
+            <IframeWorkbench
+              src=""
+              scrolling="no"
+              frame-border="0"
+              srcDoc={iframeSrcDoc}
+              allow-transparency="no"
+              id="workbenchIframeRef" />
           </IframeContent>
         </IframeBox>
         <FillCorner className="top-left" />

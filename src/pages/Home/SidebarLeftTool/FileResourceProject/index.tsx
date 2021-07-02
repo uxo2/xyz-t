@@ -89,7 +89,7 @@ const FileResourceProject = () => {
           overlayStyle={{
             padding: 0
           }}
-          getPopupContainer={() => document.querySelector('.header-file-title-box__popoverMountedNode') || document.body}
+          getPopupContainer={() => document.querySelector('.header-file-title-box__popoverMountedNode') as HTMLElement}
         >
           <EllipsisOutlined />
         </Popover>

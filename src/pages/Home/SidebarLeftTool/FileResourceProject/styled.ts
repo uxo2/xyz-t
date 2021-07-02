@@ -117,6 +117,7 @@ export const ResourceManageList = styled.div`
   }
   .label {
     text-indent: 5px;
+    padding-right: 5px;
   }
 `
 

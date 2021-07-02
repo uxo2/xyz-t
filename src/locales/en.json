@@ -29,6 +29,14 @@
     },
     "toast": {
       "unfinish": "Not finished yet, please look forward to..."
+    },
+    "baseMaterial": {
+      "element": {
+        "buttonComponent": {
+          "group": "button group",
+          "label": "button"
+        }
+      }
     }
   }
 }

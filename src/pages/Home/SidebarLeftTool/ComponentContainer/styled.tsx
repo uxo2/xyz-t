@@ -3,12 +3,13 @@ import styled from 'styled-components'
 export const Toolcontainer = styled.div`
   color: #fff;
   overflow: hidden;
-`
-export const Component = styled.div`
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
+  .component {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #e3e4e5
+  }
 `
 
 export const ComponentBox = styled.div`

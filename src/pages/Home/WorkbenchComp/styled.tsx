@@ -59,7 +59,7 @@ export const IframeContent = styled.div`
     width: 5px;
     height: 5px;
     margin: 0 auto;
-    background-color: #333e55;
+    background-color: #0a101b;
     border-radius: 0;
   }
   ::-webkit-resizer {
