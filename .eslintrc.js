@@ -47,6 +47,8 @@ module.exports = {
         "allowObject": true
       }
     ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "object-curly-newline": "off",
     'implicit-arrow-linebreak': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
@@ -68,22 +70,6 @@ module.exports = {
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
         ignoreRegExpLiterals: true,
-      },
-    ],
-    'object-curly-newline': [
-      'error',
-      {
-        ObjectExpression: 'always',
-        ObjectPattern: {
-          consistent: true,
-        },
-        ImportDeclaration: {
-          consistent: true,
-        },
-        ExportDeclaration: {
-          multiline: true,
-          minProperties: 3,
-        },
       },
     ],
     'no-plusplus': [0],

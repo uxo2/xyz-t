@@ -13,8 +13,6 @@ const HomePage = () => {
     metaView: { auxliaryCompName }
   } = useAppState()
 
-  // console.log(AuxliaryComp, auxliaryCompName, auxliaryCompName && AuxliaryComp[auxliaryCompName])
-
   return (
     <HomePageContainer>
       <HomeHeaderComp />

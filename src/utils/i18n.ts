@@ -9,9 +9,7 @@ i18n.use(initReactI18next).init({
     zh
   },
   fallbackLng: 'zh',
-  interpolation: {
-    escapeValue: false
-  }
+  interpolation: { escapeValue: false }
 })
 
 export default i18n

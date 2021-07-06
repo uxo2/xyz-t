@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { EllipsisOutlined, CheckOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
 import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import i18n from '../../../../utils/i18n'
+import SketchpadComponentTree from './SketchpadComponentTree/index'
 
 const onClick = () => {
   console.log(12)
@@ -129,7 +130,7 @@ const FileResourceProject = () => {
           {resource.visibleComponentTree ? <DownOutlined /> : <RightOutlined />}
         </SplitViewHeader>
         <SplitViewPane visible={resource.visibleComponentTree}>
-          14
+          <SketchpadComponentTree />
         </SplitViewPane>
       </SplitView>
     </FileResourceProjectContainer>
