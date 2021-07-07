@@ -162,6 +162,7 @@ body, html, #DrawingBoard {
   width: 100%;
   height: 100%;
   padding: 0;
+  background: #fff;
   margin: 0;
 }
 .frame-content {

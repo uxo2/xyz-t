@@ -28,6 +28,7 @@ export const IframeContainer = styled.div`
   box-sizing: border-box;
   background-color: #3c3c3c;
   position: relative;
+  overflow: hidden;
 `
 
 export const IframeBox = styled.div`
@@ -81,7 +82,6 @@ export const IframeContent = styled.div`
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background: #fff;
     border: none;
     margin: 0;
     padding: 0;

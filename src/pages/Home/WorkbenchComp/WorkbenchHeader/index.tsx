@@ -1,29 +1,10 @@
-import {
-  Slider,
-  message
-} from 'antd'
-import {
-  DoubleRightOutlined,
-  DoubleLeftOutlined,
-  LeftOutlined,
-  RightOutlined,
-  ClearOutlined,
-  CompressOutlined,
-  EyeOutlined
-} from '@ant-design/icons'
-import {
-  ToolBtnComp,
-  WorkbenchHeaderContainer,
-  ToolBtnRightComp,
-  Button
-} from './styled'
+import { Slider, message } from 'antd'
+import { DoubleRightOutlined, DoubleLeftOutlined, LeftOutlined, RightOutlined, ClearOutlined, CompressOutlined, EyeOutlined } from '@ant-design/icons'
+import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
+import { useAppState, useDispatch } from '../../../../contexts/providers'
+import { PageActions } from '../../../../contexts/actions'
 import OpenResourceList from './OpenResourceList'
 import i18n from '../../../../utils/i18n'
-import {
-  useAppState,
-  useDispatch
-} from '../../../../contexts/providers'
-import { PageActions } from '../../../../contexts/actions'
 
 const ComponentConfig = () => {
   const {
@@ -68,7 +49,7 @@ const WorkbenchHeader = () => (
         <ClearOutlined />
       </Button>
       <Button onClick={() => {
-        message.warning('暂未完成，尽请期待。。。')
+        message.warning(i18n.t('toast.unfinish'))
       }}>
         <CompressOutlined />
       </Button>
