@@ -5,8 +5,8 @@ import {
 import {
   DoubleRightOutlined,
   DoubleLeftOutlined,
-  StepBackwardOutlined,
-  StepForwardOutlined,
+  LeftOutlined,
+  RightOutlined,
   ClearOutlined,
   CompressOutlined,
   EyeOutlined
@@ -55,15 +55,15 @@ const WorkbenchHeader = () => (
       <Button onClick={() => {
         message.warning(i18n.t('toast.unfinish'))
       }}>
-        <StepBackwardOutlined />
+        <LeftOutlined />
       </Button>
       <Button onClick={() => {
         message.warning(i18n.t('toast.unfinish'))
       }}>
-        <StepForwardOutlined />
+        <RightOutlined />
       </Button>
       <Button onClick={() => {
-        message.warning('i')
+        message.warning(i18n.t('toast.unfinish'))
       }}>
         <ClearOutlined />
       </Button>

@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { uid } from 'react-uid'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
-// import DrawingBoard from './DrawingBoard'
 import WorkbenchHeader from './WorkbenchHeader'
 import {InitialDrawingBoard} from '../../../utils/constant'
 import {
@@ -32,45 +32,22 @@ const DividerContainer = () => {
   )
 }
 
-console.log(document, window)
-
 export const WorkbenchComp = () => {
+  const [RenderComp, setsRenderComp] = useState(<main />)
 
-  const RenderIfraneChildren = (document: Document, window: Window) => {
-    console.log(document, window)
-
-    function iframeDrag(event: React.DragEvent) {
-      event.stopPropagation()
-      event.preventDefault()
-      console.log("drop")
-    } 
-    
-    function iframeDragOver(event: React.DragEvent) {
-      event.stopPropagation()
-      console.log('dragover')
-    }
-
-    // eslint-disable-next-line react/destructuring-assignment
-    document.addEventListener('dropend', () => iframeDrag)
-    // eslint-disable-next-line react/destructuring-assignment
-    document.addEventListener('dragover', () => iframeDragOver)
-
-    function allowDrop(event: React.DragEvent) {
-      event.preventDefault()
-    }
-
-    function drop(event:React.DragEvent) {
-      event.preventDefault()
-
-      const dropText = event.dataTransfer.getData("dropData")
-      if (dropText) {
-        const dropData = JSON.parse(dropText)
-
-        console.log(dropData)
-      }
-    }
+  function allowDrop(event: React.DragEvent) {
+    event.preventDefault()
+  }
   
-    return <div onDrop={evt => drop(evt)} onDragOver={allowDrop} className="frame-drawboard-content">123</div>
+  function drop(event:React.DragEvent) {
+    event.preventDefault()
+  
+    const dropText = event.dataTransfer.getData("dropData")
+    if (dropText) {
+      const dropData = JSON.parse(JSON.parse(dropText))
+
+      setsRenderComp(<div>{dropData.label}</div>)
+    }
   }
 
   return (
@@ -82,13 +59,19 @@ export const WorkbenchComp = () => {
              <Frame 
               initialContent={InitialDrawingBoard}
               mountTarget='#DrawingBoard'>
-              {/* <DrawingBoardContainer /> */}
               <FrameContextConsumer>
-                {
-                  ({document, window}) => {
-                    return RenderIfraneChildren(document, window)
+                  {
+                    ({document, window}) => {
+                      console.log(document, window)
+                      return (<div 
+                        onDrop={evt => drop(evt)} 
+                        onDragOver={allowDrop}
+                        style={{width: '100%', height: '100%'}}>
+                          {RenderComp}
+                        </div>
+                      )
+                    }
                   }
-                }
               </FrameContextConsumer>
             </Frame>
           </IframeContent>

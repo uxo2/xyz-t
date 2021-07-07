@@ -41,6 +41,10 @@ export const IframeBox = styled.div`
   background-image: url(${iframeBg});
   flex: 1;
   box-sizing: border-box;
+  .frame-drawboard-content {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const IframeContent = styled.div`

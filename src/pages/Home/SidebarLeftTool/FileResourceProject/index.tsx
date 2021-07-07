@@ -1,11 +1,9 @@
 import { Popover } from 'antd'
-import { uid } from 'react-uid'
-import { DragEvent, useState } from 'react'
+import {  useState } from 'react'
 import { EllipsisOutlined, CheckOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
-import { CompBlock, FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
+import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import i18n from '../../../../utils/i18n'
 import SketchpadComponentTree from './SketchpadComponentTree/index'
-import antdCompList from '../../../../control/baseMaterial/antdesign/index'
 
 const FileResourceProject = () => {
   const [visiblePopover, setVisiblePopover] = useState(false)
@@ -40,16 +38,6 @@ const FileResourceProject = () => {
     )
   }
 
-  const ondragstart = (evt: DragEvent, value: string) => {
-    evt.dataTransfer.setData("dropData", value)
-  }
-
-  const CompBlockList = antdCompList.map(item => {
-    return (
-      <CompBlock draggable="true" onDragStart={evt => ondragstart(evt, JSON.stringify(item))} key={uid(item.label)}>{item.label}</CompBlock>
-    )
-  })
-
   return (
     <FileResourceProjectContainer>
       <HeaderFileTitleBox className="header-file-title-box__popoverMountedNode">
@@ -80,7 +68,7 @@ const FileResourceProject = () => {
           {resource.visiblePageResource ? <DownOutlined /> : <RightOutlined />}
         </SplitViewHeader>
         <SplitViewPane visible={resource.visiblePageResource}>
-          {CompBlockList}
+          file directory
         </SplitViewPane>
         <SplitViewHeader onClick={() => {
           setResource({

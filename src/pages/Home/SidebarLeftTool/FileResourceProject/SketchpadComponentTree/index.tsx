@@ -3,14 +3,6 @@ import { CarryOutOutlined } from '@ant-design/icons'
 import { SketchpadComponentTreeContainer } from './styled'
 
 export const ComponentTree = () => {
-  const onSelect = (keys: React.Key[], info: any) => {
-    console.log('Trigger Select', keys, info)
-  }
-
-  const onExpand = () => {
-    console.log('Trigger Expand')
-  }
-
   const TreerootNodeIcon = () => <i className="iconfont iconJournal" style={{ color: '#01aaaa' }} />
   const treeData = [
     {
@@ -50,8 +42,6 @@ export const ComponentTree = () => {
   return (
     <Tree.DirectoryTree
       defaultExpandAll
-      onSelect={onSelect}
-      onExpand={onExpand}
       treeData={treeData}
     />
   )

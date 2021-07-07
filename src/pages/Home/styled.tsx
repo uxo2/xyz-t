@@ -3,20 +3,20 @@ import styled from 'styled-components'
 // background-image: url(fullPage});
 
 export const HomePageContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
-  background-size: cover;
- 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 `
 
-export const HomeMain = styled.div`
+export const HomeMain = styled.main`
   width: 100%;
-  /* height: calc(100% - 35px); */
   overflow: hidden;
   display: flex;
   justify-content: flex-start;

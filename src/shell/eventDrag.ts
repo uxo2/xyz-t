@@ -17,18 +17,6 @@ export class IframeEvt {
         this.iframeRef.postMessage(message.data, '/')
       }
     })
-
-    // this.iframeRef.addEventListener('dragenter', () => {
-    //   console.log('dragenter')
-    // })
-
-    // this.iframeRef.addEventListener('dragover', () => {
-    //   console.log('dragover')
-    // })
-
-    // this.iframeRef.addEventListener('dragleave', () => {
-    //   console.log('dragleave')
-    // })
   }
 }
 
