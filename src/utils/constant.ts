@@ -148,3 +148,25 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
     ]
   }
 ]
+
+export const InitialDrawingBoard = `
+<!DOCTYPE html>
+  <html>
+  <head></head>
+  <body>
+    <div id="DrawingBoard" style="width: 100%; height: 100%"></div>
+  </body>
+</html>
+<style>
+body, html, #DrawingBoard {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.frame-content {
+  width: 100%;
+  height: 100%;
+}
+</style>
+`

@@ -1,5 +1,3 @@
 import Button from './button'
 
-export default {
-  'el-button': Button
-}
+export default [Button]

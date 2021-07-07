@@ -1,11 +1,11 @@
-import { useRef, useEffect } from 'react'
 import { uid } from 'react-uid'
-import IframeEvt from '../../../shell/eventDrag'
-
+import Frame, { FrameContextConsumer } from 'react-frame-component'
+// import DrawingBoard from './DrawingBoard'
 import WorkbenchHeader from './WorkbenchHeader'
+import {InitialDrawingBoard} from '../../../utils/constant'
 import {
   WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal,
-  IframeContainer, IframeBox, IframeContent, IframeWorkbench, FillCorner
+  IframeContainer, IframeBox, IframeContent, FillCorner
 } from './styled'
 
 const DividerContainer = () => {
@@ -32,55 +32,65 @@ const DividerContainer = () => {
   )
 }
 
-const getIframe = () => document.getElementById('workbenchIframeRef') as HTMLIFrameElement
+console.log(document, window)
 
 export const WorkbenchComp = () => {
-  const iframeRef = useRef<HTMLIFrameElement>()
 
-  useEffect(() => {
-    iframeRef.current = getIframe()
+  const RenderIfraneChildren = (document: Document, window: Window) => {
+    console.log(document, window)
 
-    const iframeContent = iframeRef.current.contentWindow as Window
-    const iframedemo = new IframeEvt('sd', iframeContent)
+    function iframeDrag(event: React.DragEvent) {
+      event.stopPropagation()
+      event.preventDefault()
+      console.log("drop")
+    } 
+    
+    function iframeDragOver(event: React.DragEvent) {
+      event.stopPropagation()
+      console.log('dragover')
+    }
 
-    console.log(iframedemo)
-  })
+    // eslint-disable-next-line react/destructuring-assignment
+    document.addEventListener('dropend', () => iframeDrag)
+    // eslint-disable-next-line react/destructuring-assignment
+    document.addEventListener('dragover', () => iframeDragOver)
 
-  const iframeSrcDoc = ` <style>
-  .droptarget {
-      position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;width: 100%;height: 100%;
+    function allowDrop(event: React.DragEvent) {
+      event.preventDefault()
+    }
+
+    function drop(event:React.DragEvent) {
+      event.preventDefault()
+
+      const dropText = event.dataTransfer.getData("dropData")
+      if (dropText) {
+        const dropData = JSON.parse(dropText)
+
+        console.log(dropData)
+      }
+    }
+  
+    return <div onDrop={evt => drop(evt)} onDragOver={allowDrop} className="frame-drawboard-content">123</div>
   }
-  </style>
-  <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-  <script>
-  function allowDrop(event) {
-      event.preventDefault();
-  }
-  function drop(event) {
-    event.preventDefault();
-    console.log('drop')
-    let a = event.dataTransfer.getData("Text")
-    console.log(JSON.parse(JSON.parse(a)).group)
-  }
-  </script>`
 
   return (
     <WorkbenchBox>
       <WorkbenchHeader />
       <IframeContainer>
         <IframeBox>
-          <IframeContent>
-            <IframeWorkbench
-              src=""
-              scrolling="no"
-              frame-border="0"
-              srcDoc={iframeSrcDoc}
-              allow-transparency="no"
-              id="workbenchIframeRef" />
+          <IframeContent id="iframeMount">
+             <Frame 
+              initialContent={InitialDrawingBoard}
+              mountTarget='#DrawingBoard'>
+              {/* <DrawingBoardContainer /> */}
+              <FrameContextConsumer>
+                {
+                  ({document, window}) => {
+                    return RenderIfraneChildren(document, window)
+                  }
+                }
+              </FrameContextConsumer>
+            </Frame>
           </IframeContent>
         </IframeBox>
         <FillCorner className="top-left" />

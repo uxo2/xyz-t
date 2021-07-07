@@ -73,6 +73,21 @@ export const IframeContent = styled.div`
   ::-webkit-scrollbar-corner {
     background-color: transparent;
   }
+  iframe {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 1920px;
+    height: 1080px;
+    .frame-drawboard-content {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `
 
 export const FillCorner = styled.div`
@@ -87,18 +102,6 @@ export const FillCorner = styled.div`
     border-top: solid 1px #333f57;
     border-left: solid 1px #333f57;
   }
-`
-
-export const IframeWorkbench = styled.iframe`
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  background: #fff;
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: 1920px;
-  height: 1080px;
 `
 
 export const DividerWorkbenchVertical = styled.div`

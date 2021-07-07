@@ -1,5 +1,5 @@
 import { Tree } from 'antd'
-import { CarryOutOutlined, HeatMapOutlined } from '@ant-design/icons'
+import { CarryOutOutlined } from '@ant-design/icons'
 import { SketchpadComponentTreeContainer } from './styled'
 
 export const ComponentTree = () => {
@@ -19,28 +19,30 @@ export const ComponentTree = () => {
       icon: <CarryOutOutlined />,
       children: [
         {
-          title: 'leaf 0-0', key: '0-0-0',
+          title: 'leaf 0-0', key: '0-0-0', icon: <CarryOutOutlined />,
           children: [
             {
               title: 'leaf 0-0',
               key: '0-0-0-0',
+              icon: <CarryOutOutlined />,
               children: [
                 { title: 'leaf 0-1212', key: '0-0-0-0-0', icon: <TreerootNodeIcon /> },
-                { title: 'leaf 0-1', key: '0-0-0-0-1', icon: <HeatMapOutlined /> }
+                { title: 'leaf 0-1', key: '0-0-0-0-1', icon: <TreerootNodeIcon /> }
               ]
             },
-            { title: 'leaf 0-1', key: '0-0-1-1' }
+            { title: 'leaf 0-1', key: '0-0-1-1', icon: <TreerootNodeIcon /> }
           ]
         },
-        { title: 'leaf 0-1', key: '0-0-1', isLeaf: true }
+        { title: 'leaf 0-1', key: '0-0-1', icon: <TreerootNodeIcon /> }
       ]
     },
     {
       title: 'parent 1',
       key: '0-1',
+      icon: <CarryOutOutlined />,
       children: [
-        { title: 'leaf 1-0', key: '0-1-0', isLeaf: true },
-        { title: 'leaf 1-1', key: '0-1-1', isLeaf: true }
+        { title: 'leaf 1-0', key: '0-1-0', icon: <TreerootNodeIcon /> },
+        { title: 'leaf 1-1', key: '0-1-1', icon: <TreerootNodeIcon /> }
       ]
     }
   ]

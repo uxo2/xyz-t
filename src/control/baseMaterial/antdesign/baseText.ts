@@ -1,10 +1,10 @@
 export default {
   // 工具栏配置
-  group: '按钮组件',
-  label: '基础按钮',
+  group: '文本组件',
+  label: '基础文本',
 
   // 组件属性
-  tag: 'uxo2-btn',
+  tag: 'uxo2-text',
   disabled: false,
   size: 'small',
   buttonText: '提交',

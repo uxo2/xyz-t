@@ -11,5 +11,10 @@ export const SketchpadComponentTreeContainer = styled.div`
     .ant-tree-switcher {
       background-color: transparent;
     }
+    .ant-tree-node-content-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 `

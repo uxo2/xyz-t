@@ -152,8 +152,13 @@ export const SplitViewHeader = styled.div`
 
 export const SplitViewPane = styled.div`
   overflow: hidden;
-  transition: 0.25s;
+  transition: 0.3s;
   overflow: hidden;
   height: 0;
   flex: ${(props: SplitViewPaneProps) => props.visible ? 1 : 'none'};
+`
+export const CompBlock = styled.div`
+  width: 100%;
+  height: 40px;
+  border: 1px solid red;
 `
