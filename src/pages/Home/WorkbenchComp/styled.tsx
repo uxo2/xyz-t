@@ -54,15 +54,16 @@ export const IframeContent = styled.div`
   overflow: auto;
   ::-webkit-scrollbar {
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 0;
     background-color: transparent;
   }
   ::-webkit-scrollbar-thumb {
     position: relative;
-    width: 5px;
-    height: 5px;
+    width: 0;
+    height: 0;
+    padding: 0;
     margin: 0 auto;
     background-color: #0a101b;
     border-radius: 0;
@@ -113,9 +114,10 @@ export const DividerWorkbenchVertical = styled.div`
   top: 20px;
   bottom: 0;
   width: 20px;
+  margin-top: 20px;
   background-image: url(${divider2});
   background-repeat: repeat-y;
-  background-position-y: -30px;
+  background-position-y: 0;
   border-right: solid 1px #333f57;
   overflow: hidden;
   .number {
@@ -124,7 +126,7 @@ export const DividerWorkbenchVertical = styled.div`
     font-size: 12px;
     height: 50px;
     width: 100%;
-    top: 19px;
+    top: 0;
     text-align: left;
     text-indent: 3px;
     user-select: none;
