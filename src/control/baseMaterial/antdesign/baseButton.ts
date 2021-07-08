@@ -1,10 +1,10 @@
 export default {
   // 工具栏配置
-  group: '按钮组件',
+  groupName: '按钮组件',
   label: '基础按钮',
 
   // 组件属性
-  tag: 'uxo2-btn',
+  tag: 'uxo2-base-btn',
   disabled: false,
   size: 'small',
   buttonText: '提交',
@@ -12,7 +12,7 @@ export default {
   // 自定义样式
   styleConfig: null,
   customClassName: [],
-  customRef: "",
+  custcomponentTagsomRef: "",
 
   // 事件绑定
   eventConfig: {

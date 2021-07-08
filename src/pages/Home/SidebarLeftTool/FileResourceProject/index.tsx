@@ -1,5 +1,5 @@
 import { Popover } from 'antd'
-import {  useState } from 'react'
+import { useState } from 'react'
 import { EllipsisOutlined, CheckOutlined, RightOutlined, DownOutlined } from '@ant-design/icons'
 import { FileResourceProjectContainer, HeaderFileTitleBox, ResourceManagePopoverContainer, ResourceManageList, SplitView, SplitViewHeader, SplitViewPane } from './styled'
 import i18n from '../../../../utils/i18n'

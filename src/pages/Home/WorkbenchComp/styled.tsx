@@ -109,12 +109,18 @@ export const FillCorner = styled.div`
   }
 `
 
-export const DividerWorkbenchVertical = styled.div`
+export const DividerWorkbenchVerticalContainer = styled.div`
   position: absolute;
-  top: 20px;
-  bottom: 0;
+  top: 40px;
+  bottom: 20px;
   width: 20px;
-  margin-top: 20px;
+  left: 0;
+  overflow: hidden;
+`
+
+export const DividerWorkbenchVertical = styled.div`
+  position: relative;
+  width: 20px;
   background-image: url(${divider2});
   background-repeat: repeat-y;
   background-position-y: 0;
@@ -138,11 +144,20 @@ export const DividerWorkbenchVertical = styled.div`
     right: 20px;
   }
 `
-export const DividerWorkbenchHorizontal = styled.div`
+
+export const DividerWorkbenchHorizontalContainer = styled.div`
   position: absolute;
   left: 20px;
-  right: 0;
+  right: 20px;
   height: 20px;
+  top: 0;
+  overflow: hidden;
+`
+export const DividerWorkbenchHorizontal = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 5000px;
   background-position-x: 20px;
   background-image: url(${divider1});
   background-repeat: repeat-x;
