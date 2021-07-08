@@ -1,5 +1,5 @@
 import { uid } from 'react-uid'
-import { Toolcontainer } from './styled'
+import { Toolcontainer, GroupBlock, GroupName, GroupChildren, CompUnit } from './styled'
 import baseMaterial from '../../../../control/baseMaterial'
 
 export const ComponentContainer = () => {
@@ -7,13 +7,24 @@ export const ComponentContainer = () => {
   const dragStart = (event: React.DragEvent<HTMLDivElement>, dragObj: string) => {
     event.dataTransfer.setData("dropData", JSON.stringify(dragObj))
   }
-  
+
   return (
     <Toolcontainer>
       {
-        componentTags.map(item => {
+        componentTags.map(group => {
           return (
-            <div key={uid(item.label)} className="component" draggable="true" onDragStart={event => dragStart(event, JSON.stringify(item))}>{item.label}</div>
+            <GroupBlock key={uid(group.groupName)}>
+              <GroupName>{group.groupName}</GroupName>
+              <GroupChildren >
+                {
+                  group.children?.map(item => {
+                    return (
+                      <CompUnit draggable="true" key={uid(item.label)} onDragStart={event => dragStart(event, JSON.stringify(item))}>{item.label}</CompUnit>
+                    )
+                  })
+                }
+              </GroupChildren>
+            </GroupBlock>
           )
         })
       }

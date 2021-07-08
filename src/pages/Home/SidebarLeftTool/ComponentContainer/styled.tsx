@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Toolcontainer = styled.div`
-  color: #fff;
-  overflow: hidden;
   .component {
     width: 100%;
     height: 50px;
@@ -32,4 +30,35 @@ export const ComponentBox = styled.div`
 export const TitleLabel = styled.div`
   cursor: default;
   margin-left: 10px;
+`
+
+export const GroupBlock = styled.div`
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+`
+
+export const GroupName = styled.div`
+  text-align: center;
+  line-height: 25px;
+  margin: 5px 0;
+  font-size: 12px;
+  user-select: none;
+`
+
+export const GroupChildren = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const CompUnit = styled.div`
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #47525d;
+  margin: 10px;
+  border: 1px solid #47525d;
+  box-sizing: border-box;
+  font-size: 12px;
 `
