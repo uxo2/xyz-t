@@ -1,24 +1,4 @@
 declare namespace State {
-  export interface AppState extends PageState {
-    app: App
-  }
-
-  export interface PagePayload extends MetaView, ActiveFile, App {
-
-  }
-
-  interface WorkbenchLoad {
-    activeFile: ActiveFile | null
-    openFileList: Array<ActiveFile>
-    fileResourceManage: Object<{ pageListData: Array<ActiveFile>, staticResourceData: [] }>
-  }
-
-
-  interface PageState {
-    metaView: MetaView
-    workbench: WorkbenchLoad
-  }
-
   interface App {
     token: string
     id: string
@@ -38,6 +18,11 @@ declare namespace State {
     routerPath: string
   }
 
+  interface FileResourceManage {
+    visiblePageConfig: boolean
+    visibleStaticResource: boolean
+  }
+  
   interface MetaView {
     selectedSideBarLeftIconLabel: string
     visibleSideBarLeftTool: boolean
@@ -49,9 +34,24 @@ declare namespace State {
     fileResourceManage: FileResourceManage
   }
 
-  interface FileResourceManage {
-    visiblePageConfig: boolean
-    visibleStaticResource: boolean
+  interface WorkbenchLoad {
+    drawingboardList: array
+    activeFile: ActiveFile | null
+    openFileList: array<ActiveFile>
+    fileResourceManage: Record<{ pageListData: Array<ActiveFile>, staticResourceData: [] }>
+  }
+
+  interface PageState {
+    metaView: MetaView
+    workbench: WorkbenchLoad
+  }
+
+  export interface AppState extends PageState {
+    app: App
+  }
+
+  export interface PagePayload extends MetaView, ActiveFile, App {
+
   }
 }
 
@@ -67,21 +67,6 @@ declare namespace CustomRouter {
 }
 
 declare namespace Meta {
-  interface HeaderDir {
-    label: string
-    value: string
-    notify: boolean
-    disabled: boolean
-    visible: false,
-    children?: Array<FileDir>
-  }
-
-  interface SidebarIcons {
-    icon: string
-    title: string
-    link: string
-  }
-
   export interface FileDir {
     label: string
     value: string
@@ -90,8 +75,21 @@ declare namespace Meta {
     keymaster?: string
     divider?: boolean
     notify: boolean
-    onClick?: Function | null
+    onClick?: function | null
     Comp?: React.FunctionComponent<any>
     children?: Array<FileDir>
+  }
+  interface HeaderDir {
+    label: string
+    value: string
+    notify: boolean
+    disabled: boolean
+    visible: false,
+    children?: Array<FileDir>
+  }
+  interface SidebarIcons {
+    icon: string
+    title: string
+    link: string
   }
 }

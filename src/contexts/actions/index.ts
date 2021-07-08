@@ -3,6 +3,14 @@ export enum AppActions {
   ResizeWindow = 'resizeWindow'
 }
 
+export enum DrawingBoardActions {
+  PushDrawingBoard = 'pushDrawingBoard',
+  PopDrawingBoard = 'popDrawingBoard',
+  DelDrawingBoard = 'delDrawingBoard',
+  InsertDrawingBoard = 'insertDrawingBoard',
+  
+}
+
 export enum PageActions {
   VisibleSidebarLeftIconContainer = 'visibleSidebarLeftIconContainer',
   VisibleRightConfigComp = 'visibleRightConfigComp',

@@ -10,10 +10,15 @@ const OpenResourceList = () => {
   } = useAppState()
   const dispatch = useDispatch()
 
+  interface FileProp {
+    id: string
+    title: string
+  }
+
   return (
     <OpenResourceListContainer empty={openFileList.length === 0}>
       {
-        openFileList.length ? openFileList.map(item => (
+        openFileList.length ? openFileList.map((item: FileProp) => (
           <OpenResourceItem select={activeFile?.id === item.id}>
             <ResourceItemTitle>{item.title}</ResourceItemTitle>
             <ResourceItemCloseBtn className="close-btn" onClick={() => {
