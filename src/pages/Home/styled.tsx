@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-// import fullPage from '../../assets/images/fullPage.jpg'
-// background-image: url(fullPage});
 
 export const HomePageContainer = styled.div`
   position: fixed;
@@ -22,6 +20,7 @@ export const HomeMain = styled.main`
   justify-content: flex-start;
   align-items: flex-start;
   flex:1;
+  min-height: 600px;
 `
 
 export const HomeContent = styled.div`

@@ -5,7 +5,14 @@ export const InitMetaView: State.MetaView = {
   visibleSidebarRightConfigBox: true,
   visibleHeaderBox: true,
   auxliaryCompName: '',
-  rightRouterName: '',
+  componentfield: '',
+
+  // fullLoader data
+  visibleinitFullLoading: false,
+  fullLoaderProgress: 5,
+  fullLoaderInfo: '正在检查最新版本...',
+
+  visibleFullLoading: true,
   visibleInitPropsModal: true, // init config modal
   fileResourceManage: {
     visiblePageConfig: true,

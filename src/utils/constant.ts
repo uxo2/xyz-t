@@ -152,7 +152,11 @@ export const HEADER_DIR: Array<Meta.HeaderDir> = [
 export const InitialDrawingBoard = `
 <!DOCTYPE html>
   <html>
-  <head></head>
+  <head>
+    <link href="https://cdn.bootcdn.net/ajax/libs/antd/4.16.6/antd.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/antd/4.16.6/antd.min.js"></script>
+  </head>
   <body>
     <div id="DrawingBoard" style="width: 100%; height: 100%"></div>
   </body>

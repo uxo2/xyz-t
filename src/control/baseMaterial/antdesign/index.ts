@@ -1,9 +1,9 @@
-import Button from './baseButton'
+import baseButton from './baseButton'
 import baseText from './baseText'
 import buttonGroup from './buttonGroup'
 
 const groupComp: { children?: any[], groupName?: string }[] = []
-const antdComp = [Button, baseText, buttonGroup]
+const antdComp = [baseButton, baseText, buttonGroup]
 
 antdComp.forEach(item => {
   const index = groupComp.findIndex(p => p.groupName === item.groupName)

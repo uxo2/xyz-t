@@ -1,19 +1,15 @@
 import { memo } from 'react'
 import { ComponentConfigContainer } from './styled'
-import renderComponentConfigItem from '../../../control/renderDrawingBoard/antdesign/index'
+import componentConfigItem from '../../../control/componentConfig/antdesign/index'
+import { isValidKey } from '../../../utils/index'
 
 const ComponentConfig = (
   { routename, visible }: { routename: string, visible: boolean }
 ) => {
   let ActiveComponentConfig: any
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  function isValidKey(key: string | number | symbol, object: object): key is keyof typeof object {
-    return key in object
-  }
-
-  if (isValidKey(routename, renderComponentConfigItem)) {
-    ActiveComponentConfig = renderComponentConfigItem[routename]
+  if (isValidKey(routename, componentConfigItem)) {
+    ActiveComponentConfig = componentConfigItem[routename]
   }
 
   return (

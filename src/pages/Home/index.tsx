@@ -3,18 +3,26 @@ import SidebarleftIconList from './SidebarLeftIconsList/index'
 import SideBarLeftToolComp from './SidebarLeftTool/index'
 import WorkbenchComp from './WorkbenchComp/index'
 import ComponentConfig from './ComponentConfig/index'
-// import InitPropsModal from './InitPropsModal/index'
 import { HomePageContainer, HomeMain } from './styled'
 import { useAppState } from '../../contexts/providers'
 import AuxliaryComp from './AuxliaryComp'
+import ImageGridLoader from '../../components/Loader/index'
 
 const HomePage = () => {
   const {
-    metaView: { auxliaryCompName, rightRouterName, visibleSidebarRightConfigBox }
+    metaView: {
+      auxliaryCompName,
+      componentfield,
+      visibleFullLoading,
+      visibleSidebarRightConfigBox,
+      fullLoaderProgress,
+      fullLoaderInfo
+    }
   } = useAppState()
 
   return (
     <HomePageContainer>
+      {visibleFullLoading && <ImageGridLoader progress={fullLoaderProgress} loadInfo={fullLoaderInfo} />}
       <HomeHeaderComp />
       <HomeMain>
         <SidebarleftIconList />
@@ -23,12 +31,11 @@ const HomePage = () => {
           auxliaryCompName ? <AuxliaryComp.OperationGuide /> : (
             <>
               <WorkbenchComp />
-              <ComponentConfig routename={rightRouterName} visible={visibleSidebarRightConfigBox} />
+              <ComponentConfig routename={componentfield} visible={visibleSidebarRightConfigBox} />
             </>
           )
         }
       </HomeMain>
-      {/* <InitPropsModal></InitPropsModal> */}
     </HomePageContainer>
   )
 }

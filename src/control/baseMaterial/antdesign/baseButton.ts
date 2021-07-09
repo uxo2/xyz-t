@@ -10,7 +10,7 @@ export default {
   buttonText: '提交',
 
   // 右侧配置路由地址
-  rightRouterName: 'baseButton',
+  componentfield: 'baseButton',
 
   // 自定义样式
   styleConfig: null,

@@ -1,25 +1,38 @@
+import { useState } from 'react'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
-import { uid } from 'react-uid'
+import shortuuid from 'short-uuid'
 import { useAppState, useDispatch } from '../../../../contexts/providers'
 import { InitialDrawingBoard } from '../../../../utils/constant'
+import { isValidKey } from '../../../../utils/index'
 import { DrawingBoardActions, PageActions } from '../../../../contexts/actions'
+import { AntdRender } from '../../../../control/renderComponent/index'
 
-const DrawingBoard = () => {
+const RenderComp = () => {
   const {
     workbench: { drawingboardList }
   } = useAppState()
 
-  const dispatch = useDispatch()
+  return drawingboardList.map((item: { componentfield: string }) => {
+    let RenderCompItem: any
 
-  const RenderComp = drawingboardList.map((item: { label: string }) => {
-    return (
-      <div key={uid(item.label)}>{item.label}</div>
-    )
+    if (isValidKey(item.componentfield, AntdRender)) {
+      RenderCompItem = AntdRender[item.componentfield]
+      return <RenderCompItem key={shortuuid.generate()} />
+    }
+
+    return ''
   })
+}
+
+const DrawingBoard = () => {
+  const [loadingIframe, setloadingIframe] = useState(true)
+  const dispatch = useDispatch()
 
   function allowDrop(event: React.DragEvent) {
     event.preventDefault()
   }
+
+  console.log(loadingIframe)
 
   function drop(event: React.DragEvent) {
     event.preventDefault()
@@ -27,7 +40,7 @@ const DrawingBoard = () => {
     const dropText = event.dataTransfer.getData("dropData")
 
     if (dropText) {
-      const compData = JSON.parse(JSON.parse(dropText))
+      const compData = JSON.parse(dropText)
 
       dispatch({
         type: DrawingBoardActions.PushDrawingBoard,
@@ -38,30 +51,32 @@ const DrawingBoard = () => {
       dispatch({
         type: PageActions.ActiveRightBarConfigRouteName,
         payload: {
-          rightRouterName: compData.rightRouterName
+          componentfield: compData.componentfield
         }
       })
     }
   }
-
   return (
-    <Frame
-      initialContent={InitialDrawingBoard}
-      mountTarget='#DrawingBoard'>
-      <FrameContextConsumer>
-        {
-          () => {
-            return (<div
-              onDrop={evt => drop(evt)}
-              onDragOver={allowDrop}
-              style={{ width: '100%', height: '100%' }}>
-              {RenderComp}
-            </div>
-            )
+    <>
+      <Frame
+        initialContent={InitialDrawingBoard}
+        mountTarget='#DrawingBoard' style={{ display: loadingIframe ? 'none' : 'none' }}>
+        <FrameContextConsumer>
+          {
+            () => {
+              setloadingIframe(false)
+              return (<div
+                onDrop={evt => drop(evt)}
+                onDragOver={allowDrop}
+                style={{ width: '100%', height: '100%' }}>
+                <RenderComp />
+              </div>
+              )
+            }
           }
-        }
-      </FrameContextConsumer>
-    </Frame>
+        </FrameContextConsumer>
+      </Frame>
+    </>
   )
 }
 

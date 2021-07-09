@@ -36,7 +36,7 @@ export const pageReducer = (
         ...state,
         metaView: {
           ...state.metaView,
-          rightRouterName: payload.rightRouterName
+          componentfield: payload.componentfield
         }
       }
 

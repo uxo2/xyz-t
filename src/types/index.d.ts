@@ -31,7 +31,11 @@ declare namespace State {
     visibleHeaderBox: boolean
     auxliaryCompName: string
     visibleInitPropsModal: boolean
-    rightRouterName: string
+    componentfield: string
+    visibleFullLoading: boolean
+    visibleinitFullLoading: boolean
+    fullLoaderProgress: number
+    fullLoaderInfo: string
     fileResourceManage: FileResourceManage
   }
 
@@ -48,7 +52,7 @@ declare namespace State {
     groupName: string
     label: string
     tag: string
-    rightRouterName: string
+    componentfield: string
   }
 
   interface PageState {

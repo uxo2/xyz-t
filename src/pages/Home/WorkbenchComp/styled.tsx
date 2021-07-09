@@ -52,6 +52,7 @@ export const IframeContent = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
+  position: relative;
   ::-webkit-scrollbar {
     position: relative;
     width: 15px;
