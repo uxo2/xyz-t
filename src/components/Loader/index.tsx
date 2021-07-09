@@ -23,7 +23,7 @@ const ImageGridLoader = ({ progress, loadInfo }: { progress: number, loadInfo: s
       </svg>
       <LoaderInfo>
         <LoaderItem>{loadInfo}</LoaderItem>
-        <Progress percent={progress} showInfo={false} />
+        <Progress percent={progress} showInfo={false} strokeColor="#1890ff" />
       </LoaderInfo>
     </LoaderContainer>
   )

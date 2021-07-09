@@ -32,7 +32,9 @@ const DrawingBoard = () => {
     event.preventDefault()
   }
 
-  console.log(loadingIframe)
+  const {
+    metaView: { fullLoaderProgress }
+  } = useAppState()
 
   function drop(event: React.DragEvent) {
     event.preventDefault()
@@ -60,11 +62,19 @@ const DrawingBoard = () => {
     <>
       <Frame
         initialContent={InitialDrawingBoard}
-        mountTarget='#DrawingBoard' style={{ display: loadingIframe ? 'none' : 'none' }}>
+        mountTarget='#DrawingBoard' style={{ display: loadingIframe ? 'none' : 'block' }}>
         <FrameContextConsumer>
           {
             () => {
-              setloadingIframe(false)
+              setTimeout(() => {
+                setloadingIframe(false)
+                dispatch({
+                  type: PageActions.FullLoaderProgressAction,
+                  payload: {
+                    componentfield: fullLoaderProgress + 20
+                  }
+                })
+              }, 3000)
               return (<div
                 onDrop={evt => drop(evt)}
                 onDragOver={allowDrop}

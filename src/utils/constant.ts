@@ -70,6 +70,12 @@ export const ModalDefaultAttrs = {
   footer: null
 }
 
+export enum PROGRESSMAPENUM {
+  InitBaseEnv = 5,
+  DrawingBoardIframeLoadStatus = 30,
+  CoreAxiosValue = 30
+}
+
 export const HEADER_DIR: Array<Meta.HeaderDir> = [
   {
     label: i18n.t('header.homePage'),

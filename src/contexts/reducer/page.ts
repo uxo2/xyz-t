@@ -39,7 +39,30 @@ export const pageReducer = (
           componentfield: payload.componentfield
         }
       }
-
+    case PageActions.VisibleFullLoadingContainer:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          visibleinitFullLoading: payload.visibleFullLoading
+        }
+      }
+    case PageActions.FullLoaderProgressAction:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          fullLoaderProgress: payload.fullLoaderProgress
+        }
+      }
+    case PageActions.FullLoaderInfoAction:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          fullLoaderInfo: payload.fullLoaderInfo
+        }
+      }
     default:
       return state
   }
