@@ -22,13 +22,21 @@ export const pageReducer = (
           visibleSidebarRightConfigBox: payload.visibleSidebarRightConfigBox
         }
       }
-    case PageActions.visibleAuxiliaryComp:
+    case PageActions.VisibleAuxiliaryComp:
       return {
         ...state,
         metaView: {
           ...state.metaView,
           visibleSidebarRightConfigBox: false,
           auxliaryCompName: payload.auxliaryCompName
+        }
+      }
+    case PageActions.ActiveRightBarConfigRouteName:
+      return {
+        ...state,
+        metaView: {
+          ...state.metaView,
+          rightRouterName: payload.rightRouterName
         }
       }
 

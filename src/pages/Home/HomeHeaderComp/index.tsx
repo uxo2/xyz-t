@@ -14,7 +14,7 @@ const HomeHeaderBoxComp = (): React.ReactElement => {
   const handleClickPopoverLabel = (value: string) => {
     if (value === 'operationGuide') {
       dispatch({
-        type: PageActions.visibleAuxiliaryComp,
+        type: PageActions.VisibleAuxiliaryComp,
         payload: {
           auxliaryCompName: value
         }

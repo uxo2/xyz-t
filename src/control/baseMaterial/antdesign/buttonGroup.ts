@@ -9,6 +9,9 @@ export default {
   size: 'small',
   buttonText: '提交',
 
+  // 右侧配置路由地址
+  rightRouterName: 'buttonGroup',
+
   // 自定义样式
   styleConfig: null,
   customClassName: [],

@@ -10,7 +10,7 @@ import AuxliaryComp from './AuxliaryComp'
 
 const HomePage = () => {
   const {
-    metaView: { auxliaryCompName }
+    metaView: { auxliaryCompName, rightRouterName, visibleSidebarRightConfigBox }
   } = useAppState()
 
   return (
@@ -23,7 +23,7 @@ const HomePage = () => {
           auxliaryCompName ? <AuxliaryComp.OperationGuide /> : (
             <>
               <WorkbenchComp />
-              <ComponentConfig />
+              <ComponentConfig routename={rightRouterName} visible={visibleSidebarRightConfigBox} />
             </>
           )
         }

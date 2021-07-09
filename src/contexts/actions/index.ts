@@ -7,14 +7,15 @@ export enum DrawingBoardActions {
   PushDrawingBoard = 'pushDrawingBoard',
   PopDrawingBoard = 'popDrawingBoard',
   DelDrawingBoard = 'delDrawingBoard',
-  InsertDrawingBoard = 'insertDrawingBoard',
-  
+  SelectComponent = 'selectComponent',
+  InsertDrawingBoard = 'insertDrawingBoard'
 }
 
 export enum PageActions {
   VisibleSidebarLeftIconContainer = 'visibleSidebarLeftIconContainer',
   VisibleRightConfigComp = 'visibleRightConfigComp',
-  visibleAuxiliaryComp = 'visibleAuxliaryComp'
+  VisibleAuxiliaryComp = 'visibleAuxliaryComp',
+  ActiveRightBarConfigRouteName = 'activeRightBarConfigRouteName'
 }
 
 export enum ComponentActions {
@@ -24,8 +25,9 @@ export enum ComponentActions {
   UpdateHeaderMobileMenuVisible = 'updateHeaderMobileMenuVisible',
   UpdateHeaderSearchBarVisible = 'updateHeaderSearchBarVisible',
   UpdateMaintenanceAlertVisible = 'updateMaintenanceAlertVisible',
+  UpdateRightBarConfigPage = 'updaterightBarConfigPage'
 }
 
-export type StateActions = AppActions | PageActions | ComponentActions
+export type StateActions = AppActions | PageActions | ComponentActions | DrawingBoardActions
 
 export default StateActions

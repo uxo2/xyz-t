@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { uid } from 'react-uid'
 import WorkbenchHeader from './WorkbenchHeader'
-import { WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal, IframeContainer, IframeBox, IframeContent, FillCorner } from './styled'
+import { DividerWorkbenchVerticalContainer, DividerWorkbenchHorizontalContainer, WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal, IframeContainer, IframeBox, IframeContent } from './styled'
 import DrawingBoard from './DrawingBoard/index'
 
 const dividerDom = Array(100).fill(100).map((val, index) => {
@@ -32,12 +32,16 @@ const DividerContainer = () => {
 
   return (
     <>
-      <DividerWorkbenchVertical className="left-divider" style={{ top: `${20 - scrollTopValue}px` }}>
-        {dividerDom}
-      </DividerWorkbenchVertical>
-      <DividerWorkbenchHorizontal className="top-divider" style={{ left: `${20 - scrollLeftValue}px` }}>
-        {dividerDom}
-      </DividerWorkbenchHorizontal>
+      <DividerWorkbenchVerticalContainer>
+        <DividerWorkbenchVertical className="left-divider" style={{ top: `${- scrollTopValue}px` }}>
+          {dividerDom}
+        </DividerWorkbenchVertical>
+      </DividerWorkbenchVerticalContainer>
+      <DividerWorkbenchHorizontalContainer>
+        <DividerWorkbenchHorizontal className="top-divider" style={{ left: `${- scrollLeftValue}px` }}>
+          {dividerDom}
+        </DividerWorkbenchHorizontal>
+      </DividerWorkbenchHorizontalContainer>
     </>
   )
 }
@@ -49,10 +53,9 @@ export const WorkbenchComp = () => {
       <IframeContainer>
         <IframeBox>
           <IframeContent id="iframeMount">
-            <DrawingBoard/>
+            <DrawingBoard />
           </IframeContent>
         </IframeBox>
-        <FillCorner className="top-left" />
         <DividerContainer />
       </IframeContainer>
     </WorkbenchBox>

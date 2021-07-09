@@ -1,6 +1,6 @@
 import initApp from './app'
 import initMetaView from './metaView'
-import InitWorkbench from './workbench'
+import InitWorkbench from './drawingBoard'
 
 const initState: State.AppState = {
   app: initApp,

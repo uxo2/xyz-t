@@ -1,6 +1,7 @@
-import StateActions, { AppActions, PageActions } from '../actions'
+import StateActions, { AppActions, PageActions, DrawingBoardActions } from '../actions'
 import appReducer from './app'
 import pageReducer from './page'
+import drawingBoardReducer from './drawingBoard'
 
 const reducer = (
   state: State.AppState,
@@ -9,6 +10,13 @@ const reducer = (
   if (Object.values(AppActions).includes(type as AppActions)) {
     return appReducer(state, {
       type: type as AppActions,
+      payload
+    })
+  }
+
+  if (Object.values(DrawingBoardActions).includes(type as DrawingBoardActions)) {
+    return drawingBoardReducer(state, {
+      type: type as DrawingBoardActions,
       payload
     })
   }

@@ -22,7 +22,7 @@ declare namespace State {
     visiblePageConfig: boolean
     visibleStaticResource: boolean
   }
-  
+
   interface MetaView {
     selectedSideBarLeftIconLabel: string
     visibleSideBarLeftTool: boolean
@@ -31,14 +31,24 @@ declare namespace State {
     visibleHeaderBox: boolean
     auxliaryCompName: string
     visibleInitPropsModal: boolean
+    rightRouterName: string
     fileResourceManage: FileResourceManage
   }
 
   interface WorkbenchLoad {
+    rightBarRouteName: string
     drawingboardList: array
+    activeComponent: { DragComponent } | null
     activeFile: ActiveFile | null
     openFileList: array<ActiveFile>
     fileResourceManage: Record<{ pageListData: Array<ActiveFile>, staticResourceData: [] }>
+  }
+
+  interface DragComponent {
+    groupName: string
+    label: string
+    tag: string
+    rightRouterName: string
   }
 
   interface PageState {

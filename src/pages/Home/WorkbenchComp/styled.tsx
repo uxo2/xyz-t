@@ -95,20 +95,6 @@ export const IframeContent = styled.div`
   }
 `
 
-export const FillCorner = styled.div`
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #111825;
-  z-index: 1;
-  &.top-left {
-    left: 0;
-    top: 0;
-    border-top: solid 1px #333f57;
-    border-left: solid 1px #333f57;
-  }
-`
-
 export const DividerWorkbenchVerticalContainer = styled.div`
   position: absolute;
   top: 40px;
