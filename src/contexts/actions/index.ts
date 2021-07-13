@@ -8,14 +8,18 @@ export enum DrawingBoardActions {
   PopDrawingBoard = 'popDrawingBoard',
   DelDrawingBoard = 'delDrawingBoard',
   SelectComponent = 'selectComponent',
-  InsertDrawingBoard = 'insertDrawingBoard'
+  InsertDrawingBoard = 'insertDrawingBoard',
+  ResizeDrawingBoard = 'resizeDrawingBoard'
 }
 
 export enum PageActions {
   VisibleSidebarLeftIconContainer = 'visibleSidebarLeftIconContainer',
   VisibleRightConfigComp = 'visibleRightConfigComp',
   VisibleAuxiliaryComp = 'visibleAuxliaryComp',
-  ActiveRightBarConfigRouteName = 'activeRightBarConfigRouteName'
+  ActiveRightBarConfigRouteName = 'activeRightBarConfigRouteName',
+  VisibleFullLoadingContainer = 'visibleFullLoadingContainer',
+  FullLoaderProgressAction = 'fullLoaderProgress',
+  FullLoaderInfoAction = 'fullLoaderInfo'
 }
 
 export enum ComponentActions {

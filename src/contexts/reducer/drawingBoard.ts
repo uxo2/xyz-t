@@ -14,6 +14,14 @@ export const pageReducer = (
           drawingboardList: state.workbench.drawingboardList.concat(payload.activeComponent)
         }
       }
+    case DrawingBoardActions.ResizeDrawingBoard:
+      return {
+        ...state,
+        workbench: {
+          ...state.workbench,
+          resizeDrawingBoard: payload.resizeDrawingBoard
+        }
+      }
 
     default:
       return state

@@ -32,15 +32,16 @@ declare namespace State {
     auxliaryCompName: string
     visibleInitPropsModal: boolean
     componentfield: string
-    visibleFullLoading: boolean
     visibleinitFullLoading: boolean
     fullLoaderProgress: number
     fullLoaderInfo: string
+    addProgress: number
     fileResourceManage: FileResourceManage
   }
 
   interface WorkbenchLoad {
     rightBarRouteName: string
+    resizeDrawingBoard: number
     drawingboardList: array
     activeComponent: { DragComponent } | null
     activeFile: ActiveFile | null

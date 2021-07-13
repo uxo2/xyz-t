@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
 import shortuuid from 'short-uuid'
 import { useAppState, useDispatch } from '../../../../contexts/providers'
-import { InitialDrawingBoard } from '../../../../utils/constant'
+import { InitialDrawingBoard, PROGRESSMAPENUM } from '../../../../utils/constant'
 import { isValidKey } from '../../../../utils/index'
 import { DrawingBoardActions, PageActions } from '../../../../contexts/actions'
 import { AntdRender } from '../../../../control/renderComponent/index'
@@ -17,6 +17,7 @@ const RenderComp = () => {
 
     if (isValidKey(item.componentfield, AntdRender)) {
       RenderCompItem = AntdRender[item.componentfield]
+
       return <RenderCompItem key={shortuuid.generate()} />
     }
 
@@ -25,14 +26,14 @@ const RenderComp = () => {
 }
 
 const DrawingBoard = () => {
+  console.log('render')
+
   const [loadingIframe, setloadingIframe] = useState(true)
   const dispatch = useDispatch()
 
   function allowDrop(event: React.DragEvent) {
     event.preventDefault()
   }
-
-  console.log(loadingIframe)
 
   function drop(event: React.DragEvent) {
     event.preventDefault()
@@ -56,15 +57,30 @@ const DrawingBoard = () => {
       })
     }
   }
+
+  useEffect(() => {
+    console.log(1)
+    setTimeout(() => {
+      setloadingIframe(false)
+      dispatch({
+        type: PageActions.FullLoaderProgressAction,
+        payload: {
+          addProgress: PROGRESSMAPENUM.DrawingBoardIframeLoadStatus
+        }
+      })
+    }, 60000)
+  })
+
   return (
     <>
       <Frame
         initialContent={InitialDrawingBoard}
-        mountTarget='#DrawingBoard' style={{ display: loadingIframe ? 'none' : 'none' }}>
+        mountTarget='#DrawingBoard'
+        style={{ visibility: loadingIframe ? 'hidden' : 'visible' }}>
         <FrameContextConsumer>
           {
             () => {
-              setloadingIframe(false)
+              console.log(2)
               return (<div
                 onDrop={evt => drop(evt)}
                 onDragOver={allowDrop}

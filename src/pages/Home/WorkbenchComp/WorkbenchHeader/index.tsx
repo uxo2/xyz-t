@@ -2,7 +2,7 @@ import { Slider, message } from 'antd'
 import { DoubleRightOutlined, DoubleLeftOutlined, LeftOutlined, RightOutlined, ClearOutlined, CompressOutlined, EyeOutlined } from '@ant-design/icons'
 import { ToolBtnComp, WorkbenchHeaderContainer, ToolBtnRightComp, Button } from './styled'
 import { useAppState, useDispatch } from '../../../../contexts/providers'
-import { PageActions } from '../../../../contexts/actions'
+import { PageActions, DrawingBoardActions } from '../../../../contexts/actions'
 import OpenResourceList from './OpenResourceList'
 import i18n from '../../../../utils/i18n'
 
@@ -27,6 +27,34 @@ const ComponentConfig = () => {
     >
       {visibleSidebarRightConfigBox ? <DoubleRightOutlined /> : <DoubleLeftOutlined />}
     </Button>
+  )
+}
+
+const SliderResizeDrawingBoard = () => {
+  const {
+    workbench: {
+      resizeDrawingBoard
+    }
+  } = useAppState()
+  const dispatch = useDispatch()
+
+  function changeResize(resizeNumber: number) {
+    dispatch({
+      type: DrawingBoardActions.ResizeDrawingBoard,
+      payload: {
+        resizeDrawingBoard: resizeNumber
+      }
+    })
+  }
+  return (
+    <Slider
+      defaultValue={resizeDrawingBoard}
+      className="slider-box"
+      onChange={val => changeResize(val)}
+      min={20}
+      max={200}
+      tipFormatter={value => `${value} %`}
+    />
   )
 }
 
@@ -59,13 +87,7 @@ const WorkbenchHeader = () => (
       <Button>
         <EyeOutlined />
       </Button>
-      <Slider
-        defaultValue={30}
-        className="slider-box"
-        min={20}
-        max={200}
-        tipFormatter={value => `${value} %`}
-      />
+      <SliderResizeDrawingBoard />
       <ComponentConfig />
     </ToolBtnRightComp>
   </WorkbenchHeaderContainer>
