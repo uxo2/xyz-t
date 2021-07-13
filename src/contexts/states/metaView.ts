@@ -8,12 +8,12 @@ export const InitMetaView: State.MetaView = {
   componentfield: '',
 
   // fullLoader data
-  visibleinitFullLoading: false,
+  visibleinitFullLoading: true,
   fullLoaderProgress: 5,
   fullLoaderInfo: '正在检查最新版本...',
+  addProgress: 0,
 
-  visibleFullLoading: true,
-  visibleInitPropsModal: true, // init config modal
+  visibleInitPropsModal: true,
   fileResourceManage: {
     visiblePageConfig: true,
     visibleStaticResource: true

@@ -3,7 +3,6 @@ import { Progress } from 'antd'
 import { LoaderContainer, LoaderInfo, LoaderItem } from './styled'
 
 const ImageGridLoader = ({ progress, loadInfo }: { progress: number, loadInfo: string }) => {
-  console.log(12)
   return (
     <LoaderContainer>
       <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="60px" viewBox="0 0 24 30" xmlSpace="preserve">

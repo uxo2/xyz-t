@@ -8,7 +8,8 @@ export enum DrawingBoardActions {
   PopDrawingBoard = 'popDrawingBoard',
   DelDrawingBoard = 'delDrawingBoard',
   SelectComponent = 'selectComponent',
-  InsertDrawingBoard = 'insertDrawingBoard'
+  InsertDrawingBoard = 'insertDrawingBoard',
+  ResizeDrawingBoard = 'resizeDrawingBoard'
 }
 
 export enum PageActions {

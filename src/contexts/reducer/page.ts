@@ -4,6 +4,8 @@ export const pageReducer = (
   state: State.AppState,
   { type, payload }: { type: PageActions, payload: State.PagePayload }
 ): State.AppState => {
+  let maxProgress = 0
+
   switch (type) {
     case PageActions.VisibleSidebarLeftIconContainer:
       return {
@@ -44,15 +46,17 @@ export const pageReducer = (
         ...state,
         metaView: {
           ...state.metaView,
-          visibleinitFullLoading: payload.visibleFullLoading
+          visibleinitFullLoading: payload.visibleinitFullLoading
         }
       }
     case PageActions.FullLoaderProgressAction:
+      maxProgress = payload.addProgress + state.metaView.fullLoaderProgress
       return {
         ...state,
         metaView: {
           ...state.metaView,
-          fullLoaderProgress: payload.fullLoaderProgress
+          visibleinitFullLoading: maxProgress < 100, // todo wait close the progress.
+          fullLoaderProgress: maxProgress
         }
       }
     case PageActions.FullLoaderInfoAction:

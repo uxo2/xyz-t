@@ -1,18 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { uid } from 'react-uid'
 import WorkbenchHeader from './WorkbenchHeader'
 import { DividerWorkbenchVerticalContainer, DividerWorkbenchHorizontalContainer, WorkbenchBox, DividerWorkbenchVertical, DividerWorkbenchHorizontal, IframeContainer, IframeBox, IframeContent } from './styled'
 import DrawingBoard from './DrawingBoard/index'
-
-const dividerDom = Array(100).fill(100).map((val, index) => {
-  return (
-    <span className="number" key={uid({ val, index })} >{index * val / 2}</span>
-  )
-})
+import { useAppState } from '../../../contexts/providers'
 
 const DividerContainer = () => {
   const [scrollTopValue, setscrollTopValue] = useState(0)
   const [scrollLeftValue, setscrollLeftValue] = useState(0)
+  const {
+    workbench: {
+      resizeDrawingBoard
+    }
+  } = useAppState()
+
+  const dividerDom = useMemo(() => {
+    console.log('resizeDrawingBoard', resizeDrawingBoard)
+    return Array(100).fill(100).map((val, index) => (
+      <span className="number" key={uid({ val, index })} >{index * val / 2}</span>
+    ))
+  }, [resizeDrawingBoard])
 
   useEffect(() => {
     const dom = document.getElementById('iframeMount') as HTMLElement
