@@ -6,23 +6,23 @@ import ComponentConfig from './ComponentConfig/index'
 import { HomePageContainer, HomeMain } from './styled'
 import { useAppState } from '../../contexts/providers'
 import AuxliaryComp from './AuxliaryComp'
-import ImageGridLoader from '../../components/Loader/index'
+// import ImageGridLoader from '../../components/Loader/index'
 
 const HomePage = () => {
   const {
     metaView: {
       auxliaryCompName,
       componentfield,
-      visibleFullLoading,
-      visibleSidebarRightConfigBox,
-      fullLoaderProgress,
-      fullLoaderInfo
+      visibleSidebarRightConfigBox
+      // visibleFullLoading,
+      // fullLoaderProgress,
+      // fullLoaderInfo
     }
   } = useAppState()
 
   return (
     <HomePageContainer>
-      {visibleFullLoading && <ImageGridLoader progress={fullLoaderProgress} loadInfo={fullLoaderInfo} />}
+      {/* {visibleFullLoading && <ImageGridLoader progress={fullLoaderProgress} loadInfo={fullLoaderInfo} />} */}
       <HomeHeaderComp />
       <HomeMain>
         <SidebarleftIconList />

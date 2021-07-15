@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import Frame, { FrameContextConsumer } from 'react-frame-component'
 import shortuuid from 'short-uuid'
 import { useAppState, useDispatch } from '../../../../contexts/providers'
@@ -27,7 +27,7 @@ const RenderComp = () => {
 
 const DrawingBoard = () => {
   console.log('render')
-  const [loadingIframe, setloadingIframe] = useState(true)
+  // const [loadingIframe, setloadingIframe] = useState(true)
   const dispatch = useDispatch()
 
   function allowDrop(event: React.DragEvent) {
@@ -37,6 +37,8 @@ const DrawingBoard = () => {
   const {
     metaView: { fullLoaderProgress }
   } = useAppState()
+
+  console.log(fullLoaderProgress, PROGRESSMAPENUM)
 
   function drop(event: React.DragEvent) {
     event.preventDefault()
@@ -60,25 +62,26 @@ const DrawingBoard = () => {
       })
     }
   }
+  // style={{ display: loadingIframe ? 'none' : 'block' }}
   return (
     <>
       <Frame
         initialContent={InitialDrawingBoard}
-        mountTarget='#DrawingBoard' style={{ display: loadingIframe ? 'none' : 'block' }}>
+        mountTarget='#DrawingBoard'>
         <FrameContextConsumer>
           {
             () => {
-              setTimeout(() => {
-                setloadingIframe(false)
-                const currentProgress = fullLoaderProgress + PROGRESSMAPENUM.DrawingBoardIframeLoadStatus
-                console.log(currentProgress)
-                dispatch({
-                  type: PageActions.FullLoaderProgressAction,
-                  payload: {
-                    fullLoaderProgress: currentProgress >= 100 ? 100 : currentProgress
-                  }
-                })
-              }, 3000)
+              // setTimeout(() => {
+              //   setloadingIframe(false)
+              //   const currentProgress = fullLoaderProgress + PROGRESSMAPENUM.DrawingBoardIframeLoadStatus
+              //   console.log(currentProgress)
+              //   dispatch({
+              //     type: PageActions.FullLoaderProgressAction,
+              //     payload: {
+              //       fullLoaderProgress: currentProgress >= 100 ? 100 : currentProgress
+              //     }
+              //   })
+              // }, 3000)
               return (<div
                 onDrop={evt => drop(evt)}
                 onDragOver={allowDrop}

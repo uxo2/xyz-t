@@ -99,7 +99,7 @@ export const IframeContent = styled.div`
 export const DividerWorkbenchVerticalContainer = styled.div`
   position: absolute;
   top: 40px;
-  bottom: 20px;
+  bottom:0;
   width: 20px;
   left: 0;
   overflow: hidden;
@@ -113,6 +113,8 @@ export const DividerWorkbenchVertical = styled.div`
   background-position-y: 0;
   border-right: solid 1px #333f57;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   .number {
     writing-mode: tb-rl;
     position: relative;
@@ -135,7 +137,7 @@ export const DividerWorkbenchVertical = styled.div`
 export const DividerWorkbenchHorizontalContainer = styled.div`
   position: absolute;
   left: 20px;
-  right: 20px;
+  right: 0;
   height: 20px;
   top: 0;
   overflow: hidden;
@@ -145,12 +147,13 @@ export const DividerWorkbenchHorizontal = styled.div`
   display: flex;
   flex-direction: row;
   width: 5000px;
-  background-position-x: 20px;
+  background-position-x: 0;
   background-image: url(${divider1});
   background-repeat: repeat-x;
   border-bottom: solid 1px #333f57;
   box-sizing: border-box;
   overflow: hidden;
+  margin-left: 20px;
   &.top-divider {
     top: 0;
   }
@@ -162,7 +165,7 @@ export const DividerWorkbenchHorizontal = styled.div`
     font-size: 12px;
     height: 100%;
     width: 50px;
-    left: 19px;
+    left: 0;
     text-align: left;
     text-indent: 3px;
     display: inline-block;
