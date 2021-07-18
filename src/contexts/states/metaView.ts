@@ -12,6 +12,7 @@ export const InitMetaView: State.MetaView = {
   fullLoaderProgress: 5,
   fullLoaderInfo: '正在检查最新版本...',
   addProgress: 0,
+  visibleFullLoading: true,
 
   visibleInitPropsModal: true,
   fileResourceManage: {

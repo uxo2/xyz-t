@@ -1,10 +1,11 @@
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import 'antd/dist/antd.css'
 import styled, { ThemeProvider } from 'styled-components'
 import { AppContext } from './contexts/providers'
 import Routers from './routes'
 import initState from './contexts/states'
 import reducer from './contexts/reducer'
+import Progress from './components/Progress/index'
 
 const AppDiv = styled.div`
   width: 100vw;
@@ -17,6 +18,10 @@ const AppDiv = styled.div`
 
 const App = () => {
   const [provider, dispatch] = useReducer(reducer, initState)
+  const [state, setState] = useState({
+    isAnimating: false,
+    key: 0
+  })
 
   return (
     <AppContext.Provider
@@ -29,6 +34,17 @@ const App = () => {
           mode: 'dark'
         }}>
         <AppDiv>
+          <Progress isAnimating={state.isAnimating} key={state.key} />
+          <button type="submit"
+            onClick={() => {
+              setState((prevState: { isAnimating: boolean, key: number }) => ({
+                isAnimating: !prevState.isAnimating,
+                key: prevState.isAnimating ? prevState.key : prevState.key + 1
+              }))
+            }}
+          >
+            {state.isAnimating ? 'Stop' : 'Start'}
+          </button>
           <Routers />
         </AppDiv>
       </ThemeProvider>
