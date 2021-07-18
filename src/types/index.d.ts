@@ -36,6 +36,7 @@ declare namespace State {
     fullLoaderProgress: number
     fullLoaderInfo: string
     addProgress: number
+    visibleFullLoading: boolean
     fileResourceManage: FileResourceManage
   }
 

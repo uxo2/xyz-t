@@ -54,13 +54,19 @@ const DividerContainer = () => {
 }
 
 export const WorkbenchComp = () => {
+  const {
+    workbench: {
+      drawingboardList
+    }
+  } = useAppState()
+
   return (
     <WorkbenchBox>
       <WorkbenchHeader />
       <IframeContainer>
         <IframeBox>
           <IframeContent id="iframeMount">
-            <DrawingBoard />
+            <DrawingBoard drawingboardList={drawingboardList} />
           </IframeContent>
         </IframeBox>
         <DividerContainer />

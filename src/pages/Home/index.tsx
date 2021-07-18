@@ -13,8 +13,8 @@ const HomePage = () => {
     metaView: {
       auxliaryCompName,
       componentfield,
-      visibleinitFullLoading,
       visibleSidebarRightConfigBox,
+      visibleFullLoading,
       fullLoaderProgress,
       fullLoaderInfo
     }
@@ -22,7 +22,7 @@ const HomePage = () => {
 
   return (
     <HomePageContainer>
-      {!visibleinitFullLoading && <ImageGridLoader progress={fullLoaderProgress} loadInfo={fullLoaderInfo} />}
+      {visibleFullLoading && <ImageGridLoader progress={fullLoaderProgress} loadInfo={fullLoaderInfo} />}
       <HomeHeaderComp />
       <HomeMain>
         <SidebarleftIconList />
